@@ -1,6 +1,6 @@
 <template>
   <div class="register">
-    <div>
+    <div class="d-flex justify-center">
       <img src="../assets/brand-logo.png" alt="">
     </div>
     <form @submit.prevent="registerHandler" class="mt-5">

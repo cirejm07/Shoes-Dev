@@ -1,5 +1,5 @@
 <template>
-<h3>HomeView</h3>
+
 </template>
 
 <script>
@@ -59,6 +59,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
 
 </style>

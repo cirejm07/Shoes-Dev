@@ -1,7 +1,7 @@
 <template>
 
   <div class="log-in">
-    <div>
+    <div class="d-flex justify-center">
       <img src="../assets/brand-logo.png" alt="">
     </div>
   <form @submit.prevent="loginHandler" class="mt-2">
