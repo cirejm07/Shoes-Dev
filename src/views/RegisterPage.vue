@@ -1,7 +1,7 @@
 <template>
   <div class="register">
     <div>
-      <img src="@/assets/brand-logo.png" alt="">
+      <img src="../assets/brand-logo.png" alt="">
     </div>
     <form @submit.prevent="registerHandler" class="mt-5">
   <p v-if="error" class="text-danger my-2">{{error}}</p>
@@ -27,7 +27,7 @@
 
 <script>
 import { ref } from '@vue/reactivity';
-import { auth } from '@/firebase';
+import { auth } from '../firebase';
 import { createUserWithEmailAndPassword } from '@firebase/auth';
 import { useRouter } from 'vue-router';
 

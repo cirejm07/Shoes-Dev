@@ -1,73 +1,21 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import router from './router'
 import './index.css'
-import{createRouter, createWebHistory} from 'vue-router'
-import HomeView from './views/HomeView.vue'
-import About from './views/About.vue'
-
-const router = createRouter({
-    history: createWebHistory(),
-    routes: [
-        {
-    path: '/',
-    name: 'HomeView',
-    component: HomeView
-  },
-  {
-    path: '/about',
-    name: 'AboutView',
-    component: () => import('./views/AboutView.vue')
-  },
-  {
-    path: '/login',
-    name: 'LoginPage',
-    component: () => import('./views/LoginPage.vue')
-  },
-//   {
-//     path: '/register',
-//     name: 'RegisterPage',
-//     component: () => import('./views/RegisterPage.vue')
-//   },
-  {
-    path: '/men',
-    name: 'MenView',
-    component: () => import('./views/MenView.vue')
-  },
-//   {
-//     path: '/women',
-//     name: 'WomenView',
-//     component: () => import('./views/WomenView.vue')
-//   },
-//   {
-//     path: '/unisex',
-//     name: 'UnisexVue',
-//     component: () => import('./views/Unisex.vue')
-//   },
-//   {
-//     path: '/add',
-//     name: 'AddShoes',
-//     component: () => import('./views/AddShoes.vue')
-//   },
-  
-//   {
-//     name:"NotFound",
-//     path:"/:pathMatch(.*)*",
-//     component: () => import('./views/NotFound.vue')
-// },
-//   {
-//     path: '/edit/:id',
-//     name: 'EditShoes',
-//     component: () => import('./views/EditShoes.vue')
-//   },
-//   {
-//     path: '/admin',
-//     name: 'AdminView',
-//     component: () => import('./views/AdminView.vue')
-//   }
-    ]
-})
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import {fas } from '@fortawesome/free-solid-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+library.add(fas, fab)
+// bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-createApp(App)
-.use(router)
-.mount('#app')
+import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
+
+createApp(App).use(router).use(VueSweetalert2).component('fa', FontAwesomeIcon).mount('#app')
+
+
+import "bootstrap/dist/js/bootstrap.js"
+

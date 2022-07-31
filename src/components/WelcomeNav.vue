@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
-    <router-link class="navbar-brand" to="/"><img src="@/assets/brand-hero-logo.png" alt=""></router-link>
+    <router-link class="navbar-brand" to="/"><img src="../assets/brand-hero-logo.png" alt=""></router-link>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -12,7 +12,7 @@
         <span>{{ title }}, {{ user }}</span>
       </button>
       <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-        <i class="fa-solid fa-user"></i>
+        <fa icon="user" />
         <ul class="dropdown-menu">
         <li><button @click="signoutHandler" class="dropdown-item" >Sign out</button></li>
       </ul>
@@ -34,7 +34,6 @@
 </template>
 
 <script>
-
 
 
 export default {

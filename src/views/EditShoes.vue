@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import { shoesCollectionRef } from '@/firebase'
+import { shoesCollectionRef } from '../firebase'
 import { doc, getDoc, setDoc  } from '@firebase/firestore'
 import { ref } from '@vue/reactivity'
 import { useRoute, useRouter } from 'vue-router'

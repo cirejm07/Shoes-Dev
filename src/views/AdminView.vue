@@ -25,7 +25,7 @@
 
 <script>
 import { ref } from '@vue/reactivity'
-import { auth, shoesCollectionRef } from '@/firebase'
+import { auth, shoesCollectionRef } from '../firebase'
 import { onBeforeMount, onMounted } from '@vue/runtime-core'
 import { deleteDoc, doc, onSnapshot } from '@firebase/firestore'
 export default {

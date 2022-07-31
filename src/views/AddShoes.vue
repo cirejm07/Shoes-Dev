@@ -65,7 +65,7 @@
 
 <script>
 
-import { shoesCollectionRef } from '@/firebase'
+import { shoesCollectionRef } from '../firebase'
 import { addDoc } from '@firebase/firestore'
 import { ref } from '@vue/reactivity'
 import { useRouter } from 'vue-router'
