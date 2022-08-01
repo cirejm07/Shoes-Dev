@@ -107,6 +107,7 @@ export default {
     name: "MenView",
     components: { MenNav },
     setup() {
+      
       const route = useRoute()
       const name = ref('')
       const basket = ref([])
