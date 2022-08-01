@@ -1,5 +1,5 @@
 <template>
-  <div class="text-center mt-1">
+  <div class="text-center my-3">
         <router-link to="/men">Men</router-link> |
     <router-link to="/women">Women</router-link> |
     <router-link to="/unisex">Unisex</router-link>
