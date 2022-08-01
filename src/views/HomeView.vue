@@ -36,20 +36,20 @@
 					
 				<!--Lead Card-->
 				<div v-for="shoe in trendingShoe" :key="shoe.id" class="flex h-full bg-white rounded overflow-hidden shadow-lg">
-					<a href="post.html" class="flex flex-wrap no-underline hover:no-underline">
+					<router-link :to="{path:`/shoe/${shoe.id}`}" class="flex flex-wrap no-underline hover:no-underline">
 						<div class="w-full md:w-2/3 rounded-t">	
-							<img style="max-height: 500px;" :src="shoe.imageUrl" class="h-full w-full shadow">
+							<img style="height: 500px; width:100%;" :src="shoe.imageUrl" class="h-full w-full shadow">
 						</div>
 
 						<div class="w-full md:w-1/3 flex flex-col flex-grow flex-shrink">
 							<div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
 								
 								<div class="mt-3 w-full font-bold text-xl text-gray-900 px-6">Trending</div>
-								<p class="mt-2 text-gray-800 font-serif text-base px-6 mb-5">
+								<p class="w-full mt-2 text-gray-800 font-serif text-base px-6 mb-5">
 									{{ shoe.name }}
 								</p>
-								<p class="text-gray-800 font-serif text-base px-6 mb-5">
-									{{ shoe.description }}
+								<p class="w-100 text-gray-800 font-serif text-base px-6 mb-5">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, nemo natus quis sunt ducimus suscipit eius corporis nulla, nostrum perspiciatis explicabo perferendis, dolore magnam? Incidunt ex fuga soluta eligendi veniam.
 								</p>
 							</div>
 
@@ -61,7 +61,7 @@
 							</div>
 						</div>
 
-					</a>
+					</router-link>
 				</div>
 				<!--/Lead Card-->
 
@@ -70,64 +70,37 @@
 				<div class="flex flex-wrap justify-between pt-12 -mx-6">
 
 					<!--1/3 col -->
-					<div class=" w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink" v-for="shoe in menShoe" :key="shoe.id">
+					<div class="h-50 w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
 						<div class="card-container flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
 							<router-link to="/men" class="flex flex-wrap no-underline hover:no-underline">
-								<img :src="shoe.imageUrl" class="h-64 w-full rounded-t pb-6">
-								<p class="gender-card w-full text-gray-600 text-xs md:text-sm px-6">{{ shoe.gender }}</p>
-								<div class="w-full font-bold text-xl text-gray-900 px-6">{{ shoe.name }}</div>
-								<p class="text-gray-800 font-serif text-base px-6 mb-5">
-									{{ shoe.description }}
-								</p>
+								<img src="https://images.unsplash.com/photo-1582274528667-1e8a10ded835?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" class="h-64 w-full rounded-t">
+								<p class="gender-card w-full text-gray-600 text-xs md:text-sm px-6">Men</p>
 							</router-link>
-						</div>
-						<div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
-							<div class="flex items-center justify-between">
-								<img class="w-8 h-8 rounded-full mr-4 avatar" data-tippy-content="Author Name" src="http://i.pravatar.cc/300" alt="Avatar of Author">
-								<p class="text-gray-600 text-xs md:text-sm">1 MIN READ</p>
-							</div>
 						</div>
 					</div>
 				
 					
 					<!--1/3 col -->
-					<div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink" v-for="shoe in womenShoe" :key="shoe.id">
+					<div class="h-50 w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
 						<div class="card-container flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
 							<router-link to="/women" class="flex flex-wrap no-underline hover:no-underline">
-								<img :src="shoe.imageUrl" class="h-64 w-full rounded-t pb-6">
-								<p class="gender-card w-full text-gray-600 text-xs md:text-sm px-6">{{ shoe.gender }}</p>
-								<div class="w-full font-bold text-xl text-gray-900 px-6">{{ shoe.name }}</div>
-								<p class="text-gray-800 font-serif text-base px-6 mb-5">
-									{{ shoe.description }}
-								</p>
+								<img src="https://images.unsplash.com/photo-1616847220575-31b062a4cd05?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" class="h-64 w-full rounded-t">
+								<p class="gender-card w-full text-gray-600 text-xs md:text-sm px-6">Women</p>
 							</router-link>
-						</div>
-						<div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
-							<div class="flex items-center justify-between">
-								<img class="w-8 h-8 rounded-full mr-4 avatar" data-tippy-content="Author Name" src="http://i.pravatar.cc/300" alt="Avatar of Author">
-								<p class="text-gray-600 text-xs md:text-sm">1 MIN READ</p>
-							</div>
 						</div>
 					</div>
 
 					<!--1/3 col -->
-					<div class=" w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink" v-for="shoe in uniSexShoe" :key="shoe.id">
+					
+					<div class=" w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
 						<div class="card-container flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
 							<router-link to="/unisex" class="flex flex-wrap no-underline hover:no-underline"> 
-								<img :src="shoe.imageUrl" class="h-64 w-full rounded-t pb-6">
-								<p class="gender-card w-full text-gray-600 text-xs md:text-sm px-6">{{ shoe.gender }}</p>
-								<div class="w-full font-bold text-xl text-gray-900 px-6">{{ shoe.name }}</div>
-								<p class="text-gray-800 font-serif text-base px-6 mb-5">
-									{{ shoe.description }}
-								</p>
+								<img src="https://images.unsplash.com/photo-1600950207944-0d63e8edbc3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" class="h-64 w-full rounded-t">
+								<p class="gender-card w-full text-gray-600 text-xs md:text-sm px-6">Unisex</p>
+								
 							</router-link>
 						</div>
-						<div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
-							<div class="flex items-center justify-between">
-								<img class="w-8 h-8 rounded-full mr-4 avatar" data-tippy-content="Author Name" src="http://i.pravatar.cc/300" alt="Avatar of Author">
-								<p class="text-gray-600 text-xs md:text-sm">1 MIN READ</p>
-							</div>
-						</div>
+						
 					</div>
 
 
@@ -320,6 +293,9 @@ export default {
 <style scoped>
 .card-container {
 	position: relative;
+}
+.card-container img {
+	height: 400px;
 }
 .gender-card {
 	background: rgba(0, 0, 0, 0.7);

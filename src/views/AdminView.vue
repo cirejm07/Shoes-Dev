@@ -3,12 +3,11 @@
     
     <div v-for="shoe in shoes" :key="shoe.id" class="home">
   <div class="card mx-2" style="width: 18rem; height: 500px">
-  <img :src="shoe.imageUrl" class="card-img-top" :alt="shoe.imgUrl">
+  <img :src="shoe.imageUrl" class="card-img-top" :alt="shoe.name">
   <div class="card-body">
     <p>id - {{shoe.id}}</p>
     <h5 class="card-title">Name - {{shoe.name}}</h5>
     <p>Price - {{shoe.price}}</p>
-    <p class="card-text">Description - {{shoe.description}}</p>
     <p>Category: {{shoe.category}}</p>
     <p>Gender - {{shoe.gender}}</p>
     <div class="d-flex justify-content-end">
@@ -32,8 +31,7 @@ export default {
     name: 'AdminView',
     setup() {
       const name = ref('')
-    const shoes = ref([])
-    
+      const shoes = ref([])
     onBeforeMount(() => {
         let user = auth.currentUser;
       if(user) {
@@ -58,11 +56,8 @@ export default {
       getShoes.push(shoe)
   })
     shoes.value = getShoes
-   
     })
-    })
-    
-    
+}) 
     
 
     return { name, shoes }

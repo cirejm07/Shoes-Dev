@@ -11,15 +11,15 @@
     <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-10"> 
       <!-- Cards -->
       <div class="card" v-for="shoe in basket" :key="shoe.id"> 
+         <router-link :to="{path:`/shoe/${shoe.id}`}">
         <img :src="shoe.imageUrl" alt="vue logo" class="w-full h-32 sm:h-48 object-cover">
-        <div class="m-4"> 
+        <div class="text-start m-4"> 
           <span class="font-bold">{{ shoe.name }}</span>
           <span class="block text-gray-500 text-sm">{{ shoe.gender }}</span>
           <span class="block text-gray-500 text-sm">{{ shoe.category }}</span>
+          <span class="block text-gray-500 text-sm">₱ {{ shoe.price }}</span>
         </div>
-        <div class="badge"> 
-          <span>2 Stars ⭐</span>
-        </div>
+      </router-link>
       </div>
     </div>
   </div>
@@ -30,15 +30,15 @@
     <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-10"> 
       <!-- Cards -->
       <div class="card" v-for="shoe in walking" :key="shoe.id"> 
+         <router-link :to="{path:`/shoe/${shoe.id}`}">
         <img :src="shoe.imageUrl" alt="vue logo" class="w-full h-32 sm:h-48 object-cover">
-        <div class="m-4"> 
+        <div class="text-start m-4"> 
           <span class="font-bold">{{ shoe.name }}</span>
           <span class="block text-gray-500 text-sm">{{ shoe.gender }}</span>
           <span class="block text-gray-500 text-sm">{{ shoe.category }}</span>
+          <span class="block text-gray-500 text-sm">₱ {{ shoe.price }}</span>
         </div>
-        <div class="badge"> 
-          <span>2 Stars ⭐</span>
-        </div>
+      </router-link>
       </div>
     </div>
   </div>
@@ -49,14 +49,15 @@
     <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-10"> 
       <!-- Cards -->
       <div class="card" v-for="shoe in running" :key="shoe.id"> 
+       <router-link :to="{path:`/shoe/${shoe.id}`}">
         <img :src="shoe.imageUrl" alt="vue logo" class="w-full h-32 sm:h-48 object-cover">
-        <div class="m-4"> 
+        <div class="text-start m-4"> 
           <span class="font-bold">{{ shoe.name }}</span>
           <span class="block text-gray-500 text-sm">{{ shoe.gender }}</span>
+          <span class="block text-gray-500 text-sm">{{ shoe.category }}</span>
+          <span class="block text-gray-500 text-sm">₱ {{ shoe.price }}</span>
         </div>
-        <div class="badge"> 
-          <span>2 Stars ⭐</span>
-        </div>
+      </router-link>
       </div>
     </div>
   </div>
@@ -67,14 +68,15 @@
     <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-10"> 
       <!-- Cards -->
       <div class="card" v-for="shoe in training" :key="shoe.id"> 
+         <router-link :to="{path:`/shoe/${shoe.id}`}">
         <img :src="shoe.imageUrl" alt="vue logo" class="w-full h-32 sm:h-48 object-cover">
-        <div class="m-4"> 
+        <div class="text-start m-4"> 
           <span class="font-bold">{{ shoe.name }}</span>
           <span class="block text-gray-500 text-sm">{{ shoe.gender }}</span>
+          <span class="block text-gray-500 text-sm">{{ shoe.category }}</span>
+          <span class="block text-gray-500 text-sm">₱ {{ shoe.price }}</span>
         </div>
-        <div class="badge"> 
-          <span>2 Stars ⭐</span>
-        </div>
+      </router-link>
       </div>
     </div>
   </div>
@@ -151,6 +153,11 @@ export default {
 .carousel-item img{
   width: 100% !important;
   height: 600px !important;
+}
+
+a{
+  text-decoration: none;
+  color: #000;
 }
 
 </style>

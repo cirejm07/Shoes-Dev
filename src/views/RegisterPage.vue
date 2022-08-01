@@ -40,7 +40,7 @@ import { useRouter } from 'vue-router';
       const router = useRouter()
       const registerHandler = () => {
           createUserWithEmailAndPassword(auth, email.value, password.value)
-          .then((data) => data.operationType === 'signIn' ? router.replace('/') : null)
+          .then((data) => data.operationType === 'signIn' ? window.location.assign('/') : null)
           .catch((err) => {
             console.log(err.message)
             if(err.code === 'auth/weak-password'){

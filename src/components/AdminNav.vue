@@ -1,5 +1,5 @@
 <template>
-  <div class="nav">
+  <div class="nav my-3">
     <router-link to="/admin">Admin</router-link> |
     <router-link to="/add">Add</router-link>
   </div>

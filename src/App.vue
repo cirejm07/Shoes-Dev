@@ -109,6 +109,7 @@ signoutHandler () {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  overflow-x: hidden;
 }
 
 .footer {
