@@ -1,14 +1,23 @@
 <template>
+<!-- <WelcomeNav :title="getId === '7W29HGeCdfPpqASfWeHlZkOY9t63' ? 'Admin' : 'Hi'" :user="userName" :signoutHandler="signoutHandler" />
+  <div v-if="isShow && getId === '7W29HGeCdfPpqASfWeHlZkOY9t63'">
+   <AdminNav :user="userName" :signoutHandler="signoutHandler" />
+  </div>
+  <div v-else-if="getId !== '7W29HGeCdfPpqASfWeHlZkOY9t63'">
+    <CustomerNavVue :user="userName" :signoutHandler="signoutHandler" />
+  </div> -->
+<ReusableNav />
 <body class="bg-gray-200 font-sans leading-normal tracking-normal">
-
 	<!--Header-->
-	<div class="w-full m-0 p-0 bg-cover bg-bottom" style="background-image:url('https://img.freepik.com/free-vector/abstract-background_53876-90691.jpg?w=1380&t=st=1659312521~exp=1659313121~hmac=0ffd777d814bce308e5dc792ad31b6bbb1314dc27b9c1117b9ed95cccf98ef8c'); height: 60vh; max-height:460px; background-position: center; background-repeat: no-repeat; background-size: cover;">
-			<div class="container max-w-4xl mx-auto pt-16 md:pt-32 text-center break-normal">
+	<div class="w-full m-0 p-0 bg-cover bg-bottom object-cover" style="background-image:url('https://cdn.shopify.com/s/files/1/0276/9879/0535/files/Hero-2_7b518bd5-fc42-4b95-8726-19ea0c91d066_2048x2048.jpg?v=1585570565'); height: 60vh; max-height:450px; background-position: center; background-repeat: no-repeat; background-size: cover;">
+			<div class="container max-w-4xl mx-auto pt-16 md:pt-32 text-center break-normal block">
 				<!--Title-->
-					<p class="text-white font-extrabold text-3xl md:text-5xl">
-						LuzViMinda
+				<p class="text-xl md:text-xl text-green-700 font-bold">Limited Time Offer, Online Purchase Only!</p>
+					<p class="text-green-700 font-extrabold text-3xl md:text-5xl uppercase italic">
+						Shoes Unlimited Offer
 					</p>
-					<p class="text-xl md:text-2xl text-gray-500">Every shoe has a story</p>
+					<p class="text-xl md:text-2xl text-green-700 font-bold">Take 20% Off 'Sale Must Haves'</p>
+					<button class="bg-green-600 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full">Buy Now!</button>
 			</div>
 		</div>
 		
@@ -226,6 +235,7 @@
 
 	</div>
   </body>
+  <FooterView /> 
 </template>
 
 <script>
@@ -233,8 +243,13 @@ import { ref } from '@vue/reactivity'
 import { auth, shoesCollectionRef } from '../firebase'
 import { onBeforeMount, onMounted } from '@vue/runtime-core'
 import { deleteDoc, doc, onSnapshot } from '@firebase/firestore'
+import ReusableNav from './ReusableNav.vue'
+import FooterView from '../components/FooterView.vue'
+
+
 export default {
     name: 'HomeView',
+	components: { ReusableNav, FooterView },
     setup() {
       const name = ref('')
     	const menShoe = ref([])

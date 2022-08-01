@@ -1,7 +1,7 @@
 <template>
   <div class="register">
     <div class="d-flex justify-center">
-      <img src="../assets/brand-logo.png" alt="">
+      <img src="../assets/brandlogo.png" alt="">
     </div>
     <form @submit.prevent="registerHandler" class="mt-5">
   <p v-if="error" class="text-danger my-2">{{error}}</p>

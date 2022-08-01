@@ -1,14 +1,14 @@
 <template>
 
-  <WelcomeNav :title="getId === '7W29HGeCdfPpqASfWeHlZkOY9t63' ? 'Admin' : 'Hi'" :user="userName" :signoutHandler="signoutHandler" />
+  <!-- <WelcomeNav :title="getId === '7W29HGeCdfPpqASfWeHlZkOY9t63' ? 'Admin' : 'Hi'" :user="userName" :signoutHandler="signoutHandler" />
   <div v-if="isShow && getId === '7W29HGeCdfPpqASfWeHlZkOY9t63'">
    <AdminNav :user="userName" :signoutHandler="signoutHandler" />
   </div>
   <div v-else-if="getId !== '7W29HGeCdfPpqASfWeHlZkOY9t63'">
     <CustomerNavVue :user="userName" :signoutHandler="signoutHandler" />
-  </div>
+  </div> -->
   <router-view/>
-  <FooterView />
+  <!-- <FooterView /> -->
 </template>
 
 <script>

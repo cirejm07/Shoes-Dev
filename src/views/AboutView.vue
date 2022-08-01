@@ -1,4 +1,6 @@
 <template>
+<ReusableNav />
+
 <div class="container-fluid" id="img">
   <div class="row justify-content-center">
     <div class="col-12"><p class="fs-1 fw-bold fst-italic text-light mt-4">About Us</p></div>
@@ -44,13 +46,15 @@ In business, we need data to make informed decisions. Apptopia provides the most
   </div>
   <br>
 </div>
-  
+<FooterView />
 </template>
 
 <script>
-
+import FooterView from '../components/FooterView.vue'
+import ReusableNav from './ReusableNav.vue'
 export default {
-    name: 'AboutView'
+    name: 'AboutView',
+    components: { FooterView, ReusableNav }
 }
 </script>
     

@@ -1,8 +1,8 @@
 <template>
 
   <div class="log-in">
-    <div class="d-flex justify-center">
-      <img src="../assets/brand-logo.png" alt="">
+    <div class="navbar-brand d-flex justify-center text-6xl text-gray-700">
+      <img src="../assets/brandlogo.png" alt="">
     </div>
   <form @submit.prevent="loginHandler" class="mt-2">
   <p v-if="error === 'User disabled'" class="text-danger my-2">{{error}}</p>
@@ -18,12 +18,12 @@
   </div>
   <div class="form-check text-start">
     <span v-if="!isCheck" class="text-danger text-start"> Please check the box in order to sign in. </span>
-    <span v-else class="text-start"> I agree to terms and condition of LuzViMinda.</span>
+    <span v-else class="text-start"> I agree to terms and condition of Shoes Unlimited.</span>
     <input @click="checking" v-model="isCheck" id="checkBtn" type="checkbox" class="form-check-input">
   </div>
-    <p  class="form-check-label mb-3 text-start" for="exampleCheck1">By checking the box, you agree to LuzViMinda's  Privacy Policy and Terms of Use.</p>
+    <p  class="form-check-label mb-3 text-start" for="exampleCheck1">By checking the box, you agree to Shoes Unlimited's  Privacy Policy and Terms of Use.</p>
   <div class="mb-3">
-    <button :disabled="!isCheck" type="submit" class="btn btn-primary text-uppercase fw-bold">Sign in</button>
+    <button :disabled="!isCheck" type="submit" class="btn btn-primary text-uppercase fw-bold">Log in</button>
   </div>
   <div>
     <router-link to="/register" class="register">Don't have an account?</router-link>

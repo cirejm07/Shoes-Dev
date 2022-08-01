@@ -1,5 +1,5 @@
 <template>
-<div class="md:col-span-1 md:flex md:justify-end">
+<div class="md:col-span-1 md:flex md:justify-end border-l-4 border-gray-200">
   <nav class="text-right">
     <div class="flex justify-between items-center">
       <h1 class="font-bold uppercase p-4 border-b border-gray-100">
