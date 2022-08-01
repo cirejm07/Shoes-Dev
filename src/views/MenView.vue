@@ -1,7 +1,7 @@
 <template>
 <div class="text-gray-700 grid md:grid-cols-5"> <!-- content wrapper -->
  
-<MenNav />
+<MenNav :route="route" />
 <main class="px-16 py-6 bg-gray-100 md:col-span-4">
   <!-- <Header /> -->
 <div>
@@ -100,12 +100,14 @@ import { ref } from '@vue/reactivity'
 import { onBeforeMount, onMounted } from '@vue/runtime-core'
 import { auth, shoesCollectionRef } from '../firebase'
 import { onSnapshot } from '@firebase/firestore'
+import { useRoute } from 'vue-router';
 
 
 export default {
     name: "MenView",
     components: { MenNav },
     setup() {
+      const route = useRoute()
       const name = ref('')
       const basket = ref([])
       const running = ref([])
@@ -145,7 +147,7 @@ export default {
     
     
 
-    return { name, basket, running, walking, training }
+    return { name, basket, running, walking, training, route }
     }
 }
 </script>

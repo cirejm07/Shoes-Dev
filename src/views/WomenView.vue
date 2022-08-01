@@ -1,7 +1,7 @@
 <template>
   <div class="text-gray-700 grid md:grid-cols-5"> <!-- content wrapper -->
  
-<MenNav />
+<MenNav :route="route" />
 <main class="px-16 py-6 bg-gray-100 md:col-span-4">
   <!-- <Header /> -->
 <div>
@@ -99,10 +99,12 @@ import { auth, shoesCollectionRef } from '../firebase'
 import { onBeforeMount, onMounted } from '@vue/runtime-core'
 import { onSnapshot } from '@firebase/firestore'
 import MenNav from '../components/MenNav.vue'
+import { useRoute } from 'vue-router'
 export default {
     name:'WomenView',
     components:{ MenNav },
     setup() {
+      const route = useRoute()
       const name = ref('')
     const shoes = ref([])
     const basket = ref([])
@@ -140,7 +142,7 @@ export default {
     })
     })
     
-    return { name, shoes, basket, running, walking, training }
+    return { name, shoes, basket, running, walking, training, route }
     }
 }
 </script>

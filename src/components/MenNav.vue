@@ -13,13 +13,13 @@
 
       <ul class="text-gray-700 font-bold text-sm mt-6 hidden md:block" id="menu"> 
         <li class="py-1">
-          <router-link to="/men" class="flex px-4 justify-end border-r-4 border-red-600"><span>Men</span></router-link>
+          <router-link to="/men" class="flex px-4 justify-end" :class="route.path === '/men' ?'border-red-600 border-r-4' : ''"><span>Men</span></router-link>
         </li>
         <li class="py-1">
-            <router-link to="/women" class="flex px-4 justify-end"><span>Women</span></router-link>
+            <router-link to="/women" class="flex px-4 justify-end" :class="route.path === '/women' ?'border-red-600 border-r-4' : ''"><span>Women</span></router-link>
         </li>    
         <li class="py-1">
-            <router-link to="/unisex" class="flex px-4 justify-end"><span>Unisex</span></router-link>
+            <router-link to="/unisex" class="flex px-4 justify-end" :class="route.path === '/unisex' ?'border-red-600 border-r-4' : ''"><span>Unisex</span></router-link>
         </li>
       </ul>
   </nav>
@@ -29,7 +29,7 @@
 <script>
 export default {
     name: 'MenNav',
-    // props: ['user', 'signoutHandler']
+    props: ['route']
 }
 </script>
 
