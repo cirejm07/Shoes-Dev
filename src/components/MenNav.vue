@@ -3,7 +3,7 @@
   <nav class="text-right">
     <div class="flex justify-between items-center">
       <h1 class="font-bold uppercase p-4 border-b border-gray-100">
-        <a href="/" class="text-sm md:text-xl">Shoes Brand</a>
+        <a href="/" class="text-sm md:text-xl"> </a>
       </h1>
 
       <div class="px-4 cursor-pointer md:hidden underline font-bold text-3xl" id="burger"> 
@@ -13,13 +13,19 @@
 
       <ul class="text-gray-700 font-bold text-sm mt-6 hidden md:block" id="menu"> 
         <li class="py-1">
-          <router-link to="/men" class="flex px-4 justify-end" :class="route.path === '/men' ?'border-red-600 border-r-4' : ''"><span>Men</span></router-link>
+          <span @click="showAllHandler">All</span>
         </li>
         <li class="py-1">
-            <router-link to="/women" class="flex px-4 justify-end" :class="route.path === '/women' ?'border-red-600 border-r-4' : ''"><span>Women</span></router-link>
+          <span @click="basketHandler">Basketball</span>
+        </li>
+        <li class="py-1">
+            <span @click="walkingHandler">Walking</span>
         </li>    
         <li class="py-1">
-            <router-link to="/unisex" class="flex px-4 justify-end" :class="route.path === '/unisex' ?'border-red-600 border-r-4' : ''"><span>Unisex</span></router-link>
+           <span @click="runningHandler">Running</span>
+        </li>
+        <li class="py-1">
+           <span @click="trainingAndGymHandler">Training & Gym</span>
         </li>
       </ul>
   </nav>
@@ -29,11 +35,38 @@
 <script>
 export default {
     name: 'MenNav',
-    props: ['route']
+    props: ['route', 'basketHandler', 'walkingHandler', 'runningHandler', 'trainingAndGymHandler', 'showAllHandler']
 }
 </script>
 
 <style scoped>
+span {
+  cursor: pointer;
+  position: relative;
+
+}
+
+span::before {
+  content: "";
+  width: 0%;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  transition: all 0.5s ease;
+}
+
+span:hover::before {
+  width: 100%;
+}
+
+span:hover {
+  font-size: 17px;
+  transform: scale(1.025);
+  transition: all 0.5s ease
+}
+
 
 
 </style>

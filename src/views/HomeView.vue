@@ -268,7 +268,7 @@ export default {
     menShoe.value = getShoes.filter((getShoe, index) => getShoe.gender === 'Male' &&  Math.ceil(index * Math.random() << 0)).slice(0,1)
 	womenShoe.value = getShoes.filter((getShoe, index) => getShoe.gender === 'Female' &&  Math.ceil(index * Math.random() << 0)).slice(0,1)
 	uniSexShoe.value = getShoes.filter((getShoe, index) => getShoe.gender === 'Unisex' &&  Math.ceil(index * Math.random() << 0)).slice(0,1)
-	trendingShoe.value = getShoes.filter((getShoe, index) =>Math.ceil(index * Math.random() << 0)).slice(0,1)
+	trendingShoe.value = getShoes.filter((getShoe, index) =>Math.floor(index * Math.random() << 0)).slice(0,1)
     })
     })
     

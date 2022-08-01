@@ -4,6 +4,9 @@
     <div class="col-md-6 d-md-flex justify-content-md-end">
         <div>
             <img :src="imageUrl" :alt="name">
+            <div class="flex">
+                <p @click="backHistoryHandler" class="btn btn-outline-dark mt-3">Back</p>
+            </div>
         </div>
     </div>
     <div class="col-md-6 text-start">
@@ -67,10 +70,12 @@ export default {
     }
     })
     
-
+    const backHistoryHandler = () => {
+        router.go(-1)
+    }
       
 
-    return { cityId, shoeRef, imageUrl, name,  description, price, size, category, gender }
+    return { cityId, shoeRef, imageUrl, name,  description, price, size, category, gender, backHistoryHandler }
     }
 }
 </script>

@@ -4,8 +4,8 @@
 
   </div>
    <div class="text-center ms-auto my-3">
-        <router-link to="/men">Men</router-link> |
-    <router-link to="/women">Women</router-link> |
+        <router-link to="/men">Men</router-link> &nbsp;
+    <router-link to="/women">Women</router-link> &nbsp;
     <router-link to="/unisex">Unisex</router-link>
   </div>
   <div class="text-center my-3 ms-auto">
@@ -35,15 +35,32 @@ a {
   font-weight: bold;
   color: #2c3e50 ;
   text-decoration: none;
+  position: relative;
 }
 
-a:hover{
-  color: #42b983 !important;
+a::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 1.5px;
+  background: #2c3e50;
+  transition: width 0.5s ease;
 }
+
+a:hover {
+  color: #000 !important;
+}
+
+a:hover::before{
+width: 100%;
+}
+
 
 
 a.router-link-exact-active {
-  color: #42b983;
+  border-bottom: 2px solid #000;
 }
 
 input[type='text']:focus{
