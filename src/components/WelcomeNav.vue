@@ -1,8 +1,8 @@
 <template>
   <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
-      <router-link class="uppercase font-bold text-3xl font-serif" to="/"
-        >SHOES
+      <router-link class="uppercase font-bold text-3xl font-serif text-blue-500" to="/"
+        >SHOES <span class="italic lowercase">Athletic</span>
         </router-link
       >
       <!-- <span class="text-xs italic font-thin text-center"

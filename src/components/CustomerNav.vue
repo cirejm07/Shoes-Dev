@@ -7,7 +7,7 @@
     <router-link to="/unisex">Unisex</router-link> -->
       <div class="py-3 px-4 mx-auto max-w-screen-xl md:px-6">
         <div class="flex items-center">
-          <ul class="flex flex-row mt-0 mr-6 space-x-8 text-sm font-medium">
+          <ul class="flex flex-row mt-0 mr-6 space-x-8 text-lg font-medium">
             <li>
               <router-link
                 to="/"
@@ -42,6 +42,13 @@
                 to="/about"
                 class="text-gray-900 dark:text-white uppercase"
                 >About</router-link
+              >
+            </li>
+            <li>
+              <router-link
+                to="/contact"
+                class="text-gray-900 dark:text-white uppercase"
+                >Contact</router-link
               >
             </li>
             <li>
@@ -90,7 +97,7 @@ a::before {
   bottom: -10%;
   width: 0%;
   height: 1.5px;
-  background: #42b983;
+  background: blue;
   transition: width 0.5s ease;
 }
 
