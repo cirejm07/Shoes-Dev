@@ -589,6 +589,7 @@ export default {
 		const womenShoe = ref([])
 		const uniSexShoe = ref([])
 		const trendingShoe = ref([])
+    
 
     onBeforeMount(() => {
         let user = auth.currentUser;
@@ -618,6 +619,9 @@ export default {
 	uniSexShoe.value = getShoes.filter((getShoe, index) => getShoe.gender === 'Unisex' &&  Math.ceil(index * Math.random() << 0)).slice(0,1)
 	trendingShoe.value = getShoes.filter((getShoe, index) =>Math.floor(Math.random() * Math.floor(Math.random() * index))).slice(0,1)
     })
+
+    fetch('https://www.healthcare.gov/:post-title.json')
+    .then(req => console.log(req.data))
     })
     
     const deleteHandler = async (shoeId)  => {
