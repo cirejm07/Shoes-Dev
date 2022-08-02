@@ -5,13 +5,9 @@
       <h1 class="font-bold uppercase p-4 border-b border-gray-100">
         <a href="/" class="text-sm md:text-xl"> </a>
       </h1>
-
-      <div class="px-4 cursor-pointer md:hidden underline font-bold text-3xl" id="burger"> 
-        =
-      </div>
     </div>
 
-      <ul class="text-gray-700 font-bold text-sm mt-6 hidden md:block" id="menu"> 
+      <ul class="text-gray-700 font-bold text-sm mt-6 flex flex-wrap justify-center gap-3 md:block" id="menu"> 
         <li class="py-1">
           <span @click="showAllHandler">All</span>
         </li>
@@ -35,7 +31,7 @@
 <script>
 export default {
     name: 'MenNav',
-    props: ['route', 'basketHandler', 'walkingHandler', 'runningHandler', 'trainingAndGymHandler', 'showAllHandler']
+    props: ['basketHandler', 'walkingHandler', 'runningHandler', 'trainingAndGymHandler', 'showAllHandler']
 }
 </script>
 

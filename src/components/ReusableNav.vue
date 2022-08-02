@@ -13,10 +13,10 @@
 import AdminNav from '../components/AdminNav.vue'
 import CustomerNavVue from '../components/CustomerNav.vue'
 import WelcomeNav from '../components/WelcomeNav.vue'
-import FooterView from '../components/FooterView.vue'
+
 export default {
     name: 'ReusableNav',
-    components: { AdminNav, CustomerNavVue, WelcomeNav, FooterView },
+    components: { AdminNav, CustomerNavVue, WelcomeNav },
 }
 </script>
 

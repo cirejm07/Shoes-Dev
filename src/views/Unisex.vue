@@ -1,5 +1,4 @@
 <template>
-<ReusableNav />
 <div class="text-gray-700 grid md:grid-cols-5"> <!-- content wrapper -->
 
 <MenNav :basketHandler="basketHandler" :walkingHandler="walkingHandler" :runningHandler="runningHandler" :trainingAndGymHandler="trainingAndGymHandler" :showAllHandler="showAllHandler" :route="route" />
@@ -114,7 +113,7 @@
 </div>
 </main>
 </div>
-<FooterView />
+
 </template>
 
 <script>
@@ -124,12 +123,12 @@ import { auth, shoesCollectionRef } from '../firebase'
 import { onBeforeMount, onMounted } from '@vue/runtime-core'
 import { onSnapshot } from '@firebase/firestore'
 import { useRoute } from 'vue-router'
-import ReusableNav from './ReusableNav.vue'
-import FooterView from '../components/FooterView.vue'
+
+
 
 export default {
     name: 'UnisexView',
-    components: { MenNav, ReusableNav, FooterView },
+    components: { MenNav },
     setup() {
       const isBasketball = ref(false)
       const isWalking = ref(false)

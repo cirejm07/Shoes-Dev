@@ -1,14 +1,14 @@
 <template>
-
-  <!-- <WelcomeNav :title="getId === '7W29HGeCdfPpqASfWeHlZkOY9t63' ? 'Admin' : 'Hi'" :user="userName" :signoutHandler="signoutHandler" />
+  <!-- <ReusableNav  /> -->
+  <WelcomeNav :title="getId === '7W29HGeCdfPpqASfWeHlZkOY9t63' ? 'Admin' : 'Hi'" :user="userName" :signoutHandler="signoutHandler" />
   <div v-if="isShow && getId === '7W29HGeCdfPpqASfWeHlZkOY9t63'">
    <AdminNav :user="userName" :signoutHandler="signoutHandler" />
   </div>
   <div v-else-if="getId !== '7W29HGeCdfPpqASfWeHlZkOY9t63'">
     <CustomerNavVue :user="userName" :signoutHandler="signoutHandler" />
-  </div> -->
+  </div>
   <router-view/>
-  <!-- <FooterView /> -->
+  <FooterView />
 </template>
 
 <script>
@@ -21,13 +21,14 @@ import AdminNav from './components/AdminNav.vue'
 import CustomerNavVue from './components/CustomerNav.vue'
 import WelcomeNav from './components/WelcomeNav.vue'
 import FooterView from './components/FooterView.vue'
+import ReusableNav from './components/ReusableNav.vue'
 
 
 
 
 export default {
   name: 'App',
-  components: { AdminNav, CustomerNavVue, WelcomeNav, FooterView },
+  components: { AdminNav, CustomerNavVue, WelcomeNav, FooterView, ReusableNav },
   setup(){
 
     const userName = ref('')

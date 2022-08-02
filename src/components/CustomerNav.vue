@@ -11,7 +11,7 @@
             <li>
               <router-link
                 to="/"
-                class="text-gray-900 dark:text-white hover:underline uppercase"
+                class="text-gray-900 dark:text-white uppercase"
                 aria-current="page"
                 >Home</router-link
               >
@@ -19,35 +19,35 @@
             <li>
               <router-link
                 to="/men"
-                class="text-gray-900 dark:text-white hover:underline uppercase"
+                class="text-gray-900 dark:text-white uppercase"
                 >Men's</router-link
               >
             </li>
             <li>
               <router-link
                 to="/women"
-                class="text-gray-900 dark:text-white hover:underline uppercase"
+                class="text-gray-900 dark:text-white uppercase"
                 >Women's</router-link
               >
             </li>
             <li>
               <router-link
                 to="/unisex"
-                class="text-gray-900 dark:text-white hover:underline uppercase"
+                class="text-gray-900 dark:text-white uppercase"
                 >Unisex's</router-link
               >
             </li>
             <li>
               <router-link
                 to="/about"
-                class="text-gray-900 dark:text-white hover:underline uppercase"
+                class="text-gray-900 dark:text-white uppercase"
                 >About</router-link
               >
             </li>
             <li>
               <router-link
                 to="/blog"
-                class="text-gray-900 dark:text-white hover:underline uppercase"
+                class="text-gray-900 dark:text-white uppercase"
                 >Blog</router-link
               >
             </li>
@@ -87,10 +87,10 @@ a::before {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -10%;
   width: 0%;
   height: 1.5px;
-  background: #2c3e50;
+  background: #42b983;
   transition: width 0.5s ease;
 }
 

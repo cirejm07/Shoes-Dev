@@ -1,12 +1,12 @@
 <template>
-<ReusableNav />
+
 
 <div class="text-gray-700 grid md:grid-cols-5"> <!-- content wrapper -->
- <MenNav :basketHandler="basketHandler" :walkingHandler="walkingHandler" :runningHandler="runningHandler" :trainingAndGymHandler="trainingAndGymHandler" :showAllHandler="showAllHandler" :route="route" />
+ <MenNav :basketHandler="basketHandler" :walkingHandler="walkingHandler" :runningHandler="runningHandler" :trainingAndGymHandler="trainingAndGymHandler" :showAllHandler="showAllHandler" />
 <main class="px-16 py-6 bg-gray-100 md:col-span-4">
   <!-- <Header /> -->
 <div>
-
+ 
 
   <div v-if="showAllShoe">
     <h4 class="mt-12 font-bold pb-2 border-b border-gray-200">All Shoes</h4>
@@ -114,7 +114,7 @@
 </div>
 </main>
 </div>
-<FooterView />
+
 </template>
 
 <script>
@@ -124,12 +124,12 @@ import { onBeforeMount, onMounted } from '@vue/runtime-core'
 import { auth, shoesCollectionRef } from '../firebase'
 import { onSnapshot } from '@firebase/firestore'
 import { useRoute } from 'vue-router';
-import FooterView from '../components/FooterView.vue'
-import ReusableNav from './ReusableNav.vue';
+
+
 
 export default {
     name: "MenView",
-    components: { MenNav, FooterView, ReusableNav },
+    components: { MenNav },
     setup() {
       const isBasketball = ref(false)
       const isWalking = ref(false)
