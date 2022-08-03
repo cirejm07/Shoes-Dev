@@ -1,15 +1,13 @@
 <template>
-<div class="text-gray-700 grid md:grid-cols-5"> <!-- content wrapper -->
+<div v-if="isLoading" class="loading-container">
+  <h1 class="m-auto">LOADING</h1> <img class="loading" src="../assets/loading.gif" alt="" />
+</div>
+<div v-if="!isLoading" class="text-gray-700 grid md:grid-cols-5"> <!-- content wrapper -->
 
  <AdminSideNav :maleShoesHandler="maleShoesHandler" :showAllShoeHandler="showAllShoeHandler" :femaleShoesHandler="femaleShoesHandler" :unisexShoesHandler="unisexShoesHandler" />
 <main class="px-16 py-6 bg-gray-100 md:col-span-4">
   <!-- <Header /> -->
 <div>
- <!-- <div v-if="isLoading">
-
-</div> -->
-<img class="loading" src="../assets/loading.gif" alt="" />
-
   <div v-if="allShoes">
     <div class="d-md-flex align-items-end pb-2 border-b border-gray-200">
       <h4 class="mt-12 font-bold">All Shoes</h4>
@@ -278,9 +276,18 @@ img{
   width: 100%;
   height: 200px;
 }
+
+.loading-container {
+  position: relative;
+  width: fit-content;
+  margin: 3rem auto;
+}
 .loading {
-  width: 400px;
-  height: 300;
+  height: 200px;
+  position: absolute;
+  top: -45%;
+  left: 50%;
+  transform: translate(-50%, -45%);
 }
 
 </style>
