@@ -1,17 +1,14 @@
 <template>
-
-<div v-if="isLoading">
-<img class="img-fluid" src="../assets/loading.gif" alt="">
-</div>
-
-
-
 <div class="text-gray-700 grid md:grid-cols-5"> <!-- content wrapper -->
+
  <AdminSideNav :maleShoesHandler="maleShoesHandler" :showAllShoeHandler="showAllShoeHandler" :femaleShoesHandler="femaleShoesHandler" :unisexShoesHandler="unisexShoesHandler" />
 <main class="px-16 py-6 bg-gray-100 md:col-span-4">
   <!-- <Header /> -->
 <div>
- 
+ <!-- <div v-if="isLoading">
+
+</div> -->
+<img class="loading" src="../assets/loading.gif" alt="" />
 
   <div v-if="allShoes">
     <div class="d-md-flex align-items-end pb-2 border-b border-gray-200">
@@ -280,6 +277,10 @@ await this.$swal({
 img{
   width: 100%;
   height: 200px;
+}
+.loading {
+  width: 400px;
+  height: 300;
 }
 
 </style>

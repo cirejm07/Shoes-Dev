@@ -132,7 +132,7 @@ export default {
     const setRefreshHandler = () => {
       setTimeout(() => {
         window.location.reload()
-      }, .1)
+      }, 1)
     }
 
 
