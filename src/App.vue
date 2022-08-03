@@ -1,7 +1,7 @@
 <template>
-
+<MyLoginPage v-if="isShowModalLogin" />
   <!-- <ReusableNav  /> -->
-  <WelcomeNav :title="getId === '7W29HGeCdfPpqASfWeHlZkOY9t63' ? 'Admin' : 'Hi'" :user="userName" :signoutHandler="signoutHandler" />
+  <WelcomeNav :title="getId === '7W29HGeCdfPpqASfWeHlZkOY9t63' ? 'Admin' : 'Hi'" :user="userName" :signoutHandler="signoutHandler" :isShowModalLoginHandler="isShowModalLoginHandler" />
   <div v-if="isShow && getId === '7W29HGeCdfPpqASfWeHlZkOY9t63'">
    <AdminNav :user="userName" />
   </div>
@@ -23,6 +23,7 @@ import CustomerNavVue from './components/CustomerNav.vue'
 import WelcomeNav from './components/WelcomeNav.vue'
 import FooterView from './components/FooterView.vue'
 import ReusableNav from './components/ReusableNav.vue'
+import MyLoginPage from './views/MyLoginPage.vue'
 
 
 
@@ -30,9 +31,10 @@ import ReusableNav from './components/ReusableNav.vue'
 
 export default {
   name: 'App',
-  components: { AdminNav, CustomerNavVue, WelcomeNav, FooterView, ReusableNav },
+  components: { AdminNav, CustomerNavVue, WelcomeNav, FooterView, ReusableNav, MyLoginPage },
   setup(){
 
+    const isShowModalLogin = ref(false)
     const userName = ref('')
     const isShow = ref(false)
     const router = useRouter()
@@ -43,7 +45,7 @@ export default {
     onAuthStateChanged(auth, (user) => {
       if(!user){
         console.log('there is no user')
-        router.replace('/login')
+        // router.replace('/login')
       } else if(user && route.path == '/login' ||  user && route.path == '/register'){
         router.replace('/')
         isShow.value = true
@@ -70,8 +72,12 @@ export default {
     })
    })
 
+   const isShowModalLoginHandler = () => {
+    isShowModalLogin.value = !isShowModalLogin.value
+   }
 
-   return { isShow,userName, getId }
+
+   return { isShow,userName, getId, isShowModalLogin, isShowModalLoginHandler }
   },
   methods: {
     
@@ -86,10 +92,8 @@ signoutHandler () {
         showConfirmButton: false,
         timer: 1500
       })
-        setTimeout(() => {
           window.location.reload()
-        },1500)
-        router.replace('/login')
+          window.location.assign('/')
       })
       .catch(err => console.log(err.message))
     }

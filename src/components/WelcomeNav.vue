@@ -58,7 +58,7 @@
             Signup
           </router-link>
           |
-          <router-link to="/login">Login</router-link>
+          <p @click="isShowModalLoginHandler">Login</p>
         </div>
       </div>
     </div>
@@ -69,7 +69,7 @@
 <script>
 export default {
   name: "WelcomeNav",
-  props: ["user", "signoutHandler", "title"],
+  props: ["user", "signoutHandler", "title", "isShowModalLoginHandler"],
   setup() {},
 };
 </script>

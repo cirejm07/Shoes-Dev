@@ -1,6 +1,6 @@
 <template>
 
-  <div class="log-in">
+  <div class="log-in" @keypress.enter="isShowModalLoginHandler">
     <div class="navbar-brand d-flex justify-center text-6xl text-gray-700">
       <img src="../assets/brandlogo.png" alt="">
     </div>
@@ -45,6 +45,7 @@ import { signInWithEmailAndPassword } from '@firebase/auth'
 
 export default {
   name: 'MyLoginPage',
+  props:['isShowModalLoginHandler'],
   setup() {
       const email = ref('')
       const password = ref('')
@@ -106,6 +107,14 @@ export default {
 <style scoped>
 * {
   font-size: 14px !important;
+}
+
+.log-in{
+  position: absolute;
+  z-index: 1;
+  background: red;
+  left: 50%;
+  transform: translate(-50%, 0%);
 }
 
 .btn {
