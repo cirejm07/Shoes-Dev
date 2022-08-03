@@ -65,7 +65,14 @@
     <div class="text-center my-3 ms-auto">
       <div class="search border-bottom">
         <fa icon="search" class="me-1" />
-        <input type="text" placeholder="Search" />
+        <input @change="showListHandler" type="text" placeholder="Search" v-model="searchAllShoe"/>
+        <div>
+        </div>
+        <div v-if="isShowLists" class="search-lists ">
+          <ul v-for="shoe in searchAllShoeFilter" :key="shoe.id" class="list-none">
+          <li><router-link class="flex justify-between align-items-center w-75" :to="{path:`/shoe/${shoe.id}`}"> <span class="text-xs">{{ shoe.name }}</span> <img class="w-10 h-10" :src="shoe.imageUrl" alt=""> </router-link>  </li>
+        </ul>
+        </div>
       </div>
     </div>
     <div class="cart">
@@ -76,9 +83,55 @@
 </template>
 
 <script>
+import { onSnapshot } from '@firebase/firestore';
+import { computed, onMounted, ref } from '@vue/runtime-core';
+import { shoesCollectionRef } from '../firebase';
+
 export default {
   name: "CustomerNav",
-  props: ["user", "signoutHandler"],
+  props: ["user"],
+  setup() {
+
+    const shoes = ref([])
+    const searchAllShoe = ref('')
+    const isShowLists = ref(false)
+    onMounted(() => {
+       onSnapshot(shoesCollectionRef, (querySnapshot) => {
+  const getShoes = [];
+  querySnapshot.forEach((doc) => {
+    const shoe = {
+      id: doc.id,
+      category: doc.data().category,
+      description: doc.data().description,
+      gender: doc.data().gender,
+      imageUrl: doc.data().imageUrl,
+      name: doc.data().name,
+      price: doc.data().price,
+      size: doc.data().size
+    }
+      getShoes.push(shoe)
+  })
+    shoes.value = getShoes.slice(0,5)
+
+    })
+
+    })
+
+     const searchAllShoeFilter = computed(() => {
+      return shoes.value.filter(
+        ({ name }) => [ name ]
+          .some(val => val.toLowerCase().includes(searchAllShoe.value.toLowerCase()))
+      );
+    })
+
+    const showListHandler = () =>{
+          isShowLists.value = !isShowLists.value
+      }
+
+
+    return { shoes, searchAllShoe, searchAllShoeFilter, isShowLists, showListHandler }
+  }
+
 };
 </script>
 
@@ -116,6 +169,17 @@ a.router-link-exact-active {
 input[type="text"]:focus {
   outline: none;
   border: none;
+}
+
+.search {
+  position: relative;
+}
+
+.search-lists {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  transform: translate(-0%, -0%);
 }
 
 .cart {
