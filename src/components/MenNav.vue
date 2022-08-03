@@ -5,13 +5,10 @@
       <h1 class="font-bold uppercase p-4 border-b border-gray-100">
         <a href="/" class="text-sm md:text-xl"> </a>
       </h1>
-<<<<<<< HEAD
 
       <div class="px-4 cursor-pointer md:hidden underline font-bold text-3xl" id="burger"> 
         = 
       </div>
-=======
->>>>>>> d5eeaa8b629d376f860f5730f3d81f155ef053c1
     </div>
 
       <ul class="text-gray-700 font-bold text-sm mt-6 flex flex-wrap justify-center gap-3 md:block" id="menu"> 

@@ -73,7 +73,7 @@
           <li><router-link @click="setRefreshHandler" class="flex justify-between align-items-center bg-slate-100 border" :to="{path:`/shoe/${shoe.id}`}"> <span class="text-xs">{{ shoe.name }}</span> <img class="w-10 h-10 ms-5" :src="shoe.imageUrl" alt=""> </router-link>  </li>
         </ul>
         </div>
-        
+      
       </div>
     </div>
     <div class="cart">
@@ -87,12 +87,13 @@
 import { onSnapshot } from '@firebase/firestore';
 import { computed, onMounted, ref } from '@vue/runtime-core';
 import { shoesCollectionRef } from '../firebase';
+import { useRoute } from 'vue-router';
 
 export default {
   name: "CustomerNav",
   props: ["user"],
   setup() {
-
+    const route = useRoute()
     const shoes = ref([])
     const searchAllShoe = ref('')
     const isShowLists = ref(false)
@@ -132,7 +133,7 @@ export default {
     const setRefreshHandler = () => {
       setTimeout(() => {
         window.location.reload()
-      }, 1)
+      })
     }
 
 
