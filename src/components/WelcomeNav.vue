@@ -51,11 +51,7 @@
           </button>
         </div>
       </div>
-      <div
-        v-else
-        class="nav-right collapse navbar-collapse"
-        id="navbarSupportedContent"
-      >
+      <div v-else class="nav-right collapse navbar-collapse" id="navbarSupportedContent">
         <!-- Split dropstart button -->
         <div class="ms-auto">
           <router-link to="/register" aria-expanded="false">
@@ -64,10 +60,10 @@
           |
           <router-link to="/login">Login</router-link>
         </div>
-        
       </div>
     </div>
-  </nav>
+    
+</nav>
 </template>
 
 <script>
