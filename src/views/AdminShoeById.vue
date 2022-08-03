@@ -72,6 +72,10 @@ export default {
     
     const backHistoryHandler = () => {
         router.go(-1)
+        setTimeout(() => {
+        
+         window.location.reload()   
+        }, 100);
     }
       
 
