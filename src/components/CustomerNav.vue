@@ -68,11 +68,12 @@
         <input @change="showListHandler" type="text" placeholder="Search" v-model="searchAllShoe"/>
         <div>
         </div>
-        <div v-if="isShowLists" class="search-lists ">
+        <div v-if="isShowLists && searchAllShoe.value !== ''" class="search-lists ">
           <ul v-for="shoe in searchAllShoeFilter" :key="shoe.id" class="list-none">
-          <li><router-link class="flex justify-between align-items-center w-75" :to="{path:`/shoe/${shoe.id}`}"> <span class="text-xs">{{ shoe.name }}</span> <img class="w-10 h-10" :src="shoe.imageUrl" alt=""> </router-link>  </li>
+          <li><router-link @click="setRefreshHandler" class="flex justify-between align-items-center bg-slate-100 border" :to="{path:`/shoe/${shoe.id}`}"> <span class="text-xs">{{ shoe.name }}</span> <img class="w-10 h-10 ms-5" :src="shoe.imageUrl" alt=""> </router-link>  </li>
         </ul>
         </div>
+        
       </div>
     </div>
     <div class="cart">
@@ -111,7 +112,7 @@ export default {
     }
       getShoes.push(shoe)
   })
-    shoes.value = getShoes.slice(0,5)
+    shoes.value = getShoes
 
     })
 
@@ -128,8 +129,14 @@ export default {
           isShowLists.value = !isShowLists.value
       }
 
+    const setRefreshHandler = () => {
+      setTimeout(() => {
+        window.location.reload()
+      }, .1)
+    }
 
-    return { shoes, searchAllShoe, searchAllShoeFilter, isShowLists, showListHandler }
+
+    return {setRefreshHandler, shoes, searchAllShoe, searchAllShoeFilter, isShowLists, showListHandler }
   }
 
 };
@@ -177,9 +184,10 @@ input[type="text"]:focus {
 
 .search-lists {
   position: absolute;
+  width: 100%;
   top: 110%;
-  left: 0;
-  transform: translate(-0%, -0%);
+  left: -8%;
+  transform: translate(-8%, -0%);
 }
 
 .cart {

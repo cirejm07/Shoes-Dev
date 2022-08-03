@@ -1,5 +1,10 @@
 <template>
 
+<div v-if="isLoading">
+<img class="img-fluid" src="../assets/loading.gif" alt="">
+</div>
+
+
 
 <div class="text-gray-700 grid md:grid-cols-5"> <!-- content wrapper -->
  <AdminSideNav :maleShoesHandler="maleShoesHandler" :showAllShoeHandler="showAllShoeHandler" :femaleShoesHandler="femaleShoesHandler" :unisexShoesHandler="unisexShoesHandler" />
@@ -117,27 +122,6 @@
 </main>
 </div>
 
-  <!-- <div class="d-md-flex flex-wrap justify-content-evenly align-items-center mx-auto">
-    
-    <div v-for="shoe in shoes" :key="shoe.id" class="home">
-  <div class="card mx-2" style="width: 18rem; height: 500px">
-  <img :src="shoe.imageUrl" class="card-img-top" :alt="shoe.name">
-  <div class="card-body">
-    <p>id - {{shoe.id}}</p>
-    <h5 class="card-title">Name - {{shoe.name}}</h5>
-    <p>Price - {{shoe.price}}</p>
-    <p>Category: {{shoe.category}}</p>
-    <p>Gender - {{shoe.gender}}</p>
-    <div class="d-flex justify-content-end">
-      <router-link class="btn btn-primary h-25 me-1" :to="{path:`/edit/${shoe.id}`}">Edit</router-link>
-     <p @click.prevent="deleteHandler(shoe.id)" class="btn btn-danger">Delete</p>
-    </div>
-  </div>
-</div>
-    <br>
-  </div>
-  </div> -->
-
 </template>
 
 <script>
@@ -152,6 +136,7 @@ export default {
     name: 'AdminView',
     components:{ AdminSideNav },
     setup() {
+      const isLoading = ref(true)
       const searchAllShoe = ref('')
 
       const name = ref('')
@@ -193,6 +178,7 @@ export default {
     maleShoes.value = (getShoes).filter((getShoe) => getShoe.gender === 'Male')
     femaleShoes.value = (getShoes).filter((getShoe) => getShoe.gender === 'Female')
     uniSexShoes.value = (getShoes).filter((getShoe) => getShoe.gender === 'Unisex')
+    isLoading.value= false
     })
 }) 
     const showAllShoeHandler = () => {
@@ -227,9 +213,10 @@ export default {
       );
       
     })
+
     
 
-    return {searchAllShoe, searchAllShoeFilter , name, shoes, allShoes,maleShoes, isMaleShoes, maleShoesHandler, showAllShoeHandler, femaleShoes, isFemaleShoes, femaleShoesHandler, uniSexShoes, isUnisexShoes, unisexShoesHandler }
+    return {isLoading,searchAllShoe, searchAllShoeFilter , name, shoes, allShoes,maleShoes, isMaleShoes, maleShoesHandler, showAllShoeHandler, femaleShoes, isFemaleShoes, femaleShoesHandler, uniSexShoes, isUnisexShoes, unisexShoesHandler }
     },
     methods: {
         async deleteHandler (shoeId) {
