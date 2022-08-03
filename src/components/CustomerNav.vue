@@ -120,7 +120,7 @@ export default {
 
      const searchAllShoeFilter = computed(() => {
       return shoes.value.filter(
-        ({ name }) => [ name ]
+        ({ name, gender,category }) => [ name,gender,category ]
           .some(val => val.toLowerCase().includes(searchAllShoe.value.toLowerCase()))
       );
     })
