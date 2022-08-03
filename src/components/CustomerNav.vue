@@ -73,7 +73,6 @@
           <li><router-link @click="setRefreshHandler" class="flex justify-between align-items-center bg-slate-100 border" :to="{path:`/shoe/${shoe.id}`}"> <span class="text-xs">{{ shoe.name }}</span> <img class="w-10 h-10 ms-5" :src="shoe.imageUrl" alt=""> </router-link>  </li>
         </ul>
         </div>
-      
       </div>
     </div>
     <div class="cart">
