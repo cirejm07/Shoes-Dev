@@ -1,4 +1,5 @@
 <template>
+<div>
 <div v-if="isLoading" class="loading-container">
   <h1 class="m-auto">LOADING</h1> <img class="loading" src="../assets/loading.gif" alt="" />
 </div>
@@ -115,6 +116,7 @@
 
 </div>
 </main>
+</div>
 </div>
 
 </template>
