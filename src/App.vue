@@ -8,6 +8,11 @@
   <div v-else-if="getId !== '7W29HGeCdfPpqASfWeHlZkOY9t63'">
     <CustomerNavVue :user="userName"/>
   </div>
+  <div>
+    <ModalLogin /> 
+    <!-- <ModalRegister /> -->
+  </div>
+  
   <router-view />
   <FooterView />
 </template>
@@ -23,7 +28,12 @@ import CustomerNavVue from './components/CustomerNav.vue'
 import WelcomeNav from './components/WelcomeNav.vue'
 import FooterView from './components/FooterView.vue'
 import ReusableNav from './components/ReusableNav.vue'
+<<<<<<< HEAD
 import MyLoginPage from './views/MyLoginPage.vue'
+=======
+import ModalLogin from './components/ModalLogin.vue'
+import ModalRegister from './components/ModalRegister.vue'
+>>>>>>> 3d13926a2a28ac1202a49c6315619d3a97962db7
 
 
 
@@ -31,7 +41,11 @@ import MyLoginPage from './views/MyLoginPage.vue'
 
 export default {
   name: 'App',
+<<<<<<< HEAD
   components: { AdminNav, CustomerNavVue, WelcomeNav, FooterView, ReusableNav, MyLoginPage },
+=======
+  components: { AdminNav, CustomerNavVue, WelcomeNav, FooterView, ReusableNav, ModalLogin, ModalRegister },
+>>>>>>> 3d13926a2a28ac1202a49c6315619d3a97962db7
   setup(){
 
     const isShowModalLogin = ref(false)

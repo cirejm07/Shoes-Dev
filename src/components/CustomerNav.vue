@@ -7,7 +7,7 @@
     <router-link to="/unisex">Unisex</router-link> -->
       <div class="py-3 px-4 mx-auto max-w-screen-xl md:px-6">
         <div class="flex items-center">
-          <ul class="flex flex-row mt-0 mr-6 space-x-8 text-lg font-medium">
+          <ul class="flex flex-row mt-0 space-x-4 text-xs font-medium md:space-x-6 md:text-base">
             <li>
               <router-link
                 to="/"

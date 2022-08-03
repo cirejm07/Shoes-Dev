@@ -10,7 +10,7 @@
         </div>
         <div class="mb-3 col">
           <label for="description" class="form-label">Description</label>
-          <textarea  v-model="description" name="" id="description" cols="50" rows="3" placeholder="Describe the product"></textarea>
+          <textarea class="border"  v-model="description" name="" id="description" cols="53" rows="3" placeholder="Describe the product"></textarea>
         </div>
         <div class="row justify-content-center">
         <div class="mb-3 col-6">
@@ -24,14 +24,14 @@
         </div>
         <div class="mb-3 col">
           <label for="gender" class="form-label mx-2">Gender</label>
-          <select  v-model="gender" id="gender">
+          <select  class="border" v-model="gender" id="gender">
             <option value="Male">Male</option>
             <option value="Female">Female</option>
             <option value="Unisex">Unisex</option>
           </select>
  
           <label for="category" class="form-label mx-2">Category</label>
-          <select  v-model="category" id="category">
+          <select class="border" v-model="category" id="category">
             <option value="Running">Running</option>
             <option value="Walking">Walking</option>
             <option value="Basketball">Basketball</option>
