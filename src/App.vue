@@ -7,7 +7,7 @@
   <div v-else-if="getId !== '7W29HGeCdfPpqASfWeHlZkOY9t63'">
     <CustomerNavVue :user="userName" :signoutHandler="signoutHandler" />
   </div>
-  <router-view/>
+  <router-view />
   <FooterView />
 </template>
 

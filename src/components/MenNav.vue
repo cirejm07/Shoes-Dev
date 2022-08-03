@@ -7,7 +7,7 @@
       </h1>
 
       <div class="px-4 cursor-pointer md:hidden underline font-bold text-3xl" id="burger"> 
-        =
+        = 
       </div>
     </div>
 

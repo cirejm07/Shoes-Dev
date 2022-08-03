@@ -22,9 +22,7 @@
     <div v-else class="nav-right collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Split dropstart button -->
     <div class="ms-auto">
-      <router-link to="/about" aria-expanded="false">
-       About 
-      </router-link>
+      <router-link to="/about" aria-expanded="false">About</router-link>
        | 
       <router-link to="/login">Login</router-link>
     </div>

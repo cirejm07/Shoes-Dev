@@ -217,6 +217,10 @@ export default {
 </script>
 
 <style scoped>
+.carousel-item img{
+  width: 100% !important;
+  height: 600px !important;
+}
 a{
   text-decoration: none;
   color: #000;

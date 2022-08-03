@@ -132,6 +132,13 @@ export default {
     const isRunning = ref(false)
     const isTrainingAndGym = ref(false)
     const showAllShoe = ref(true)
+
+    // const isBasketball = ref(true)
+    // const isWalking = ref(false)
+    // const isRunning = ref(false)
+    // const isTrainingAndGym = ref(false)
+    // const showAllShoe = ref(false)
+
     const route = useRoute()
     const name = ref('')
     const shoes = ref([])
@@ -217,10 +224,8 @@ export default {
   width: 100% !important;
   height: 600px !important;
 }
-
 a{
   text-decoration: none;
   color: #000;
 }
-
 </style>
