@@ -1,11 +1,12 @@
 <template>
 
+  <!-- <ReusableNav  /> -->
   <WelcomeNav :title="getId === '7W29HGeCdfPpqASfWeHlZkOY9t63' ? 'Admin' : 'Hi'" :user="userName" :signoutHandler="signoutHandler" />
   <div v-if="isShow && getId === '7W29HGeCdfPpqASfWeHlZkOY9t63'">
-   <AdminNav :user="userName" :signoutHandler="signoutHandler" />
+   <AdminNav :user="userName" />
   </div>
   <div v-else-if="getId !== '7W29HGeCdfPpqASfWeHlZkOY9t63'">
-    <CustomerNavVue :user="userName" :signoutHandler="signoutHandler" />
+    <CustomerNavVue :user="userName"/>
   </div>
   <router-view />
   <FooterView />
@@ -16,18 +17,20 @@
 import {  useRoute, useRouter } from 'vue-router'
 import { auth } from '../src/firebase'
 import { onAuthStateChanged, signOut } from '@firebase/auth'
-import { onBeforeMount, ref } from 'vue'
+import {  onBeforeMount, ref } from 'vue'
 import AdminNav from './components/AdminNav.vue'
 import CustomerNavVue from './components/CustomerNav.vue'
 import WelcomeNav from './components/WelcomeNav.vue'
 import FooterView from './components/FooterView.vue'
+import ReusableNav from './components/ReusableNav.vue'
+
 
 
 
 
 export default {
   name: 'App',
-  components: { AdminNav, CustomerNavVue, WelcomeNav, FooterView },
+  components: { AdminNav, CustomerNavVue, WelcomeNav, FooterView, ReusableNav },
   setup(){
 
     const userName = ref('')
@@ -35,7 +38,6 @@ export default {
     const router = useRouter()
     const getId = ref(null)
     const route = useRoute()
-    
 
    onBeforeMount(() => {
     onAuthStateChanged(auth, (user) => {
@@ -68,7 +70,6 @@ export default {
     })
    })
 
-  
 
    return { isShow,userName, getId }
   },

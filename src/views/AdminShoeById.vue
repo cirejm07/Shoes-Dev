@@ -28,7 +28,7 @@ import { ref } from '@vue/reactivity'
 import { useRoute, useRouter } from 'vue-router'
 import { onBeforeMount } from '@vue/runtime-core'
 export default {
-    name: 'ShoeById',
+    name: 'AdminShoeById',
      setup() {
     const cityId = ref(null)
     const route = useRoute()

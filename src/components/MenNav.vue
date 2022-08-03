@@ -1,17 +1,20 @@
 <template>
-<div class="md:col-span-1 md:flex md:justify-end">
+<div class="md:col-span-1 md:flex md:justify-end border-l-4 border-gray-200">
   <nav class="text-right">
     <div class="flex justify-between items-center">
       <h1 class="font-bold uppercase p-4 border-b border-gray-100">
         <a href="/" class="text-sm md:text-xl"> </a>
       </h1>
+<<<<<<< HEAD
 
       <div class="px-4 cursor-pointer md:hidden underline font-bold text-3xl" id="burger"> 
         = 
       </div>
+=======
+>>>>>>> d5eeaa8b629d376f860f5730f3d81f155ef053c1
     </div>
 
-      <ul class="text-gray-700 font-bold text-sm mt-6 hidden md:block" id="menu"> 
+      <ul class="text-gray-700 font-bold text-sm mt-6 flex flex-wrap justify-center gap-3 md:block" id="menu"> 
         <li class="py-1">
           <span @click="showAllHandler">All</span>
         </li>
@@ -35,7 +38,7 @@
 <script>
 export default {
     name: 'MenNav',
-    props: ['route', 'basketHandler', 'walkingHandler', 'runningHandler', 'trainingAndGymHandler', 'showAllHandler']
+    props: ['basketHandler', 'walkingHandler', 'runningHandler', 'trainingAndGymHandler', 'showAllHandler']
 }
 </script>
 

@@ -1,62 +1,68 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import TheHomePage from '../views/TheHomePage.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'HomeView',
-    component: HomeView
+    name: 'TheHomePage',
+    component: TheHomePage
   },
   {
     path: '/about',
-    name: 'AboutView',
-    component: () => import('../views/AboutView.vue')
+    // name: 'AboutView',
+    // component: () => import('../views/AboutView.vue')
+    name: 'TheTeamPage',
+    component: () => import('../views/TheTeamPage.vue')
   },
   {
     path: '/login',
-    name: 'LoginPage',
-    component: () => import('../views/LoginPage.vue')
+    name: 'MyLoginPage',
+    component: () => import('../views/MyLoginPage.vue')
   },
   {
     path: '/register',
-    name: 'RegisterPage',
-    component: () => import('../views/RegisterPage.vue')
+    name: 'MyRegisterPage',
+    component: () => import('../views/MyRegisterPage.vue')
   },
   {
     path: '/men',
-    name: 'MenView',
-    component: () => import('../views/MenView.vue')
+    name: 'TheMenPage',
+    component: () => import('../views/TheMenPage.vue')
   },
   {
     path: '/women',
-    name: 'WomenView',
-    component: () => import('../views/WomenView.vue')
+    name: 'TheWomenPage',
+    component: () => import('../views/TheWomenPage.vue')
   },
   {
     path: '/unisex',
-    name: 'UnisexVue',
-    component: () => import('../views/Unisex.vue')
+    name: 'TheUnisexPage',
+    component: () => import('../views/TheUnisexPage.vue')
   },
   {
     path: '/add',
-    name: 'AddShoes',
-    component: () => import('../views/AddShoes.vue')
+    name: 'AdminAdd',
+    component: () => import('../views/AdminAdd.vue')
   },
-  
   {
-    name:"NotFound",
+    path: '/contact',
+    name: 'TheContactPage',
+    component: () => import('../views/TheContactPage.vue')
+  },
+  {
+    name:"PageNotFound",
     path:"/:pathMatch(.*)*",
-    component: () => import('../views/NotFound.vue')
+    component: () => import('../views/PageNotFound.vue')
 },
 {
   path: '/shoe/:id',
-  name: 'ShoeById',
-  component: () => import('../views/ShoeById.vue')
+  name: 'AdminShoeById',
+  component: () => import('../views/AdminShoeById.vue')
 },
   {
     path: '/edit/:id',
-    name: 'EditShoes',
-    component: () => import('../views/EditShoes.vue')
+    name: 'AdminEdit',
+    component: () => import('../views/AdminEdit.vue')
   },
   {
     path: '/admin',
