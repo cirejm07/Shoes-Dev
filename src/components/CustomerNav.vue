@@ -70,7 +70,7 @@
         </div>
         <div v-if="isShowLists && searchAllShoe.value !== ''" class="search-lists ">
           <ul v-for="shoe in searchAllShoeFilter" :key="shoe.id" class="list-none">
-          <li><router-link class="flex justify-between align-items-center bg-slate-100 border" :to="{path:`/shoe/${shoe.id}`}"> <span class="text-xs">{{ shoe.name }}</span> <img class="w-10 h-10 ms-5" :src="shoe.imageUrl" alt=""> </router-link>  </li>
+          <li><router-link @click="setRefreshHandler" class="flex justify-between align-items-center bg-slate-100 border" :to="{path:`/shoe/${shoe.id}`}"> <span class="text-xs">{{ shoe.name }}</span> <img class="w-10 h-10 ms-5" :src="shoe.imageUrl" alt=""> </router-link>  </li>
         </ul>
         </div>
       </div>
@@ -128,8 +128,14 @@ export default {
           isShowLists.value = !isShowLists.value
       }
 
+    const setRefreshHandler = () => {
+      setTimeout(() => {
+        window.location.reload()
+      }, .1)
+    }
 
-    return { shoes, searchAllShoe, searchAllShoeFilter, isShowLists, showListHandler }
+
+    return {setRefreshHandler, shoes, searchAllShoe, searchAllShoeFilter, isShowLists, showListHandler }
   }
 
 };

@@ -227,6 +227,7 @@ export default {
       );
       
     })
+
     
 
     return {searchAllShoe, searchAllShoeFilter , name, shoes, allShoes,maleShoes, isMaleShoes, maleShoesHandler, showAllShoeHandler, femaleShoes, isFemaleShoes, femaleShoesHandler, uniSexShoes, isUnisexShoes, unisexShoesHandler }
