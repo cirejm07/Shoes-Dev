@@ -40,7 +40,7 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            <fa icon="user" />
+            <img class="user-img" :src="userCredImg" :alt="user">
             <ul class="dropdown-menu">
               <li>
                 <button @click="signoutHandler" class="dropdown-item">
@@ -54,11 +54,7 @@
       <div v-else class="nav-right collapse navbar-collapse" id="navbarSupportedContent">
         <!-- Split dropstart button -->
         <div class="ms-auto">
-          <router-link to="/register" aria-expanded="false">
-            Signup
-          </router-link>
-          |
-          <p @click="isShowModalLoginHandler">Login</p>
+          <ModalLogin />
         </div>
       </div>
     </div>
@@ -67,10 +63,12 @@
 </template>
 
 <script>
+import ModalLogin from './ModalLogin.vue';
 export default {
-  name: "WelcomeNav",
-  props: ["user", "signoutHandler", "title", "isShowModalLoginHandler"],
-  setup() {},
+    name: "WelcomeNav",
+    props: ["user", "signoutHandler", "title", "isShowModalLoginHandler", "userCredImg"],
+    setup() { },
+    components: { ModalLogin }
 };
 </script>
 
@@ -84,6 +82,12 @@ nav {
 img {
   width: 100px;
   height: 50px;
+}
+
+.user-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
 
 .dropstart .dropdown-toggle-split::before {

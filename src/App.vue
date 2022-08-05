@@ -1,7 +1,5 @@
 <template>
-<MyLoginPage v-if="isShowModalLogin" />
-  <!-- <ReusableNav  /> -->
-  <WelcomeNav :title="getId === '7W29HGeCdfPpqASfWeHlZkOY9t63' ? 'Admin' : 'Hi'" :user="userName" :signoutHandler="signoutHandler" :isShowModalLoginHandler="isShowModalLoginHandler" />
+  <WelcomeNav :userCredImg="userCredImg" :title="getId === '7W29HGeCdfPpqASfWeHlZkOY9t63' ? 'Admin' : 'Hi'" :user="userName" :signoutHandler="signoutHandler" :isShowModalLoginHandler="isShowModalLoginHandler" />
   <div v-if="isShow && getId === '7W29HGeCdfPpqASfWeHlZkOY9t63'">
    <AdminNav :user="userName" />
   </div>
@@ -9,8 +7,6 @@
     <CustomerNavVue :user="userName"/>
   </div>
   <div>
-    <ModalLogin /> 
-    <!-- <ModalRegister /> -->
   </div>
   
   <router-view />
@@ -20,7 +16,7 @@
 <script>
 
 import {  useRoute, useRouter } from 'vue-router'
-import { auth } from '../src/firebase'
+import { auth, usersCollectionRef } from '../src/firebase'
 import { onAuthStateChanged, signOut } from '@firebase/auth'
 import {  onBeforeMount, ref } from 'vue'
 import AdminNav from './components/AdminNav.vue'
@@ -28,12 +24,8 @@ import CustomerNavVue from './components/CustomerNav.vue'
 import WelcomeNav from './components/WelcomeNav.vue'
 import FooterView from './components/FooterView.vue'
 import ReusableNav from './components/ReusableNav.vue'
-<<<<<<< HEAD
-import MyLoginPage from './views/MyLoginPage.vue'
-=======
-import ModalLogin from './components/ModalLogin.vue'
-import ModalRegister from './components/ModalRegister.vue'
->>>>>>> 3d13926a2a28ac1202a49c6315619d3a97962db7
+import { doc, getDoc } from '@firebase/firestore'
+
 
 
 
@@ -41,11 +33,7 @@ import ModalRegister from './components/ModalRegister.vue'
 
 export default {
   name: 'App',
-<<<<<<< HEAD
-  components: { AdminNav, CustomerNavVue, WelcomeNav, FooterView, ReusableNav, MyLoginPage },
-=======
-  components: { AdminNav, CustomerNavVue, WelcomeNav, FooterView, ReusableNav, ModalLogin, ModalRegister },
->>>>>>> 3d13926a2a28ac1202a49c6315619d3a97962db7
+  components: { AdminNav, CustomerNavVue, WelcomeNav, FooterView, ReusableNav },
   setup(){
 
     const isShowModalLogin = ref(false)
@@ -54,7 +42,7 @@ export default {
     const router = useRouter()
     const getId = ref(null)
     const route = useRoute()
-
+    const userCredImg = ref(null)
    onBeforeMount(() => {
     onAuthStateChanged(auth, (user) => {
       if(!user){
@@ -70,7 +58,11 @@ export default {
       } else if ( 
         route.path == '/admin' && user.uid != '7W29HGeCdfPpqASfWeHlZkOY9t63' 
         ||
-        route.path == '/add' && user.uid != '7W29HGeCdfPpqASfWeHlZkOY9t63'
+        route.path == '/add' && user.uid != '7W29HGeCdfPpqASfWeHlZkOY9t63' 
+        ||
+        route.path == '/admin' && !user
+        ||
+        route.path == '/add' && !user
         ){
          router.replace('/')
       }
@@ -78,10 +70,14 @@ export default {
         console.log(`there is a user`)
         isShow.value = true
         const user = auth.currentUser
-        console.log(user)
-        console.log(user.uid)
         getId.value = user.uid
         userName.value = user.email.split('@')[0]
+       getDoc(doc(usersCollectionRef, user.uid))
+       .then(doc => {
+        userCredImg.value = doc.data().image
+        console.log(doc.data())
+        console.log(userCredImg);
+        })
       }
     })
    })
@@ -91,7 +87,7 @@ export default {
    }
 
 
-   return { isShow,userName, getId, isShowModalLogin, isShowModalLoginHandler }
+   return { isShow,userName, getId, userCredImg ,isShowModalLogin, isShowModalLoginHandler }
   },
   methods: {
     

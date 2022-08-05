@@ -5,9 +5,9 @@
       <!-- <router-link to="/men">Men</router-link> &nbsp;
     <router-link to="/women">Women</router-link> &nbsp;
     <router-link to="/unisex">Unisex</router-link> -->
-      <div class="py-3 px-4 mx-auto max-w-screen-xl md:px-6">
+      <div class=" py-3 px-4 mx-auto max-w-screen-xl md:px-6">
         <div class="flex items-center">
-          <ul class="flex flex-row mt-0 space-x-4 text-xs font-medium md:space-x-6 md:text-base">
+          <ul class="d-md-flex flex-row m-auto space-x-4 text-xs font-medium md:space-x-6 md:text-base">
             <li>
               <router-link
                 to="/"
@@ -143,6 +143,9 @@ export default {
 </script>
 
 <style scoped>
+li {
+  width: fit-content;
+}
 a {
   font-weight: bold;
   color: #2c3e50;
