@@ -232,6 +232,7 @@ export default {
             address: regAddress.value,
             image: image.value
         })
+        alert('account created')
          setTimeout(() => {
               window.location.assign('/')
             }, 1000)

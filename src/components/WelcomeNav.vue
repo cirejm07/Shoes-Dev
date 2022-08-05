@@ -40,7 +40,8 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            <img class="user-img" :src="userCredImg" :alt="user">
+            <span v-if="userCredImg"> <img class="user-img" :src="userCredImg" :alt="user"> </span>
+            <span v-else><fa icon="user"></fa> </span>
             <ul class="dropdown-menu">
               <li>
                 <button @click="signoutHandler" class="dropdown-item">
