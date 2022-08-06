@@ -100,6 +100,7 @@ export default {
         console.log(file)
         var storage = getStorage();
         var storageRef = imageRef(storage, 'products/' + file.name);
+        
 
         uploadBytes(storageRef, file).then((snapshot) => {
           image.value = snapshot

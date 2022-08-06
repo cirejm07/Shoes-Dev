@@ -74,7 +74,7 @@ export default {
         userName.value = user.email.split('@')[0]
        getDoc(doc(usersCollectionRef, user.uid))
        .then(doc => {
-        userCredImg.value = doc.data().image
+          userCredImg.value = doc.data().image
         console.log(doc.data())
         console.log(userCredImg);
         })
