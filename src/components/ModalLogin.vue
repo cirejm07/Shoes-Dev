@@ -124,6 +124,7 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from '@fir
 import { useRouter } from 'vue-router'
 import { doc, setDoc } from '@firebase/firestore'
 import { getDownloadURL, getStorage, ref as imageRef, uploadBytes, uploadBytesResumable } from '@firebase/storage'
+import Swal from 'sweetalert2'
 
 export default {
     name: 'ModalLogin',
@@ -232,10 +233,31 @@ export default {
             address: regAddress.value,
             image: image.value
         })
-        alert('account created')
-         setTimeout(() => {
-              window.location.assign('/')
-            }, 1000)
+          let timerInterval
+          Swal.fire({
+            title: `Welcome ${regName.value}`,
+            html: 'We will redirect to page in <b></b> milliseconds.',
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: () => {
+              Swal.showLoading()
+              const b = Swal.getHtmlContainer().querySelector('b')
+              timerInterval = setInterval(() => {
+                b.textContent = Swal.getTimerLeft()
+              }, 100)
+            },
+            willClose: () => {
+              clearInterval(timerInterval)
+            }
+          }).then((result) => {
+            /* Read more about handling dismissals below */
+            if (result.dismiss === Swal.DismissReason.timer) {
+              console.log('I was closed by the timer')
+            }
+          })
+          setTimeout(() => {
+            window.location.assign('/')
+          },1999)
           })
           .catch((err) => {
             console.log(err.message)

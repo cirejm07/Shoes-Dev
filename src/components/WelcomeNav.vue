@@ -86,9 +86,10 @@ img {
 }
 
 .user-img {
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 30px;
   border-radius: 50%;
+  border: 1px solid beige;
 }
 
 .dropstart .dropdown-toggle-split::before {
