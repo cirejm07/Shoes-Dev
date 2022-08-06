@@ -158,7 +158,7 @@ export default {
       category: doc.data().category,
       description: doc.data().description,
       gender: doc.data().gender,
-      imageUrl: doc.data().imageUrl,
+      imageUrl: doc.data().image,
       name: doc.data().name,
       price: doc.data().price,
       size: doc.data().size

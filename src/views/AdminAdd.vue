@@ -42,22 +42,11 @@
       </form>
     </div>
   <div class="col-4 mt-4">
-    <form @submit.prevent="addHandler"  class="container">
-      <div><img :src="imageUrl" alt=""></div>
-        <label for="image-url" class="form-label mt-4">Image Url</label>
-        <input v-model="imageUrl" type="text" class="form-control" id="image-url" aria-describedby="emailHelp">
-    </form>
+      <div><img :src="image" alt=""></div>
+      <div v-if="loadingState">{{ loadingState }}</div>
+        <label for="image-url" class="form-label mt-4">Image</label>
+        <input @change="imageHandler" type="file" class="form-control" id="image-url" aria-describedby="emailHelp">
   </div> 
-<!-- <div>
-  <p>imageUrl - <img :src="imageUrl" :alt="imageUrl"></p>
-  <p>name - {{name}}</p>
-  <p>description - {{description}}</p>
-  <p>price - {{price}}</p>
-  <p>size - {{size}}</p>
-  <p>category - {{category}}</p>
-  <p> gender - {{gender}}</p>
-</div> -->
-
 
   </div>
 </div>
@@ -66,9 +55,10 @@
 <script>
 
 import { shoesCollectionRef } from '../firebase'
-import { addDoc } from '@firebase/firestore'
+import { addDoc, setDoc } from '@firebase/firestore'
 import { ref } from '@vue/reactivity'
 import { useRouter } from 'vue-router'
+import { getDownloadURL, getStorage, ref as imageRef, uploadBytes, uploadBytesResumable } from '@firebase/storage'
 
 export default {
     name:'AdminAdd',
@@ -76,18 +66,20 @@ export default {
       const router = useRouter()
 
 
-      const imageUrl = ref(null)
+      const image = ref(null)
       const name = ref(null)
       const description = ref(null)
       const price = ref(null)
       const size = ref(null)
       const category = ref(null)
       const gender = ref(null)
+      const loadingState = ref('')
+
 
       const addHandler = async () => {
          try{
           const addDocument = await addDoc(shoesCollectionRef, {
-          imageUrl:imageUrl.value, 
+          image:image.value, 
           name: name.value, 
           description: description.value, 
           price: price.value, 
@@ -103,7 +95,46 @@ export default {
          }
       }
 
-      return { imageUrl, name, description, price, size, category, gender, addHandler  }
+        const imageHandler = (e) => {
+        var file = e.target.files[0]
+        console.log(file)
+        var storage = getStorage();
+        var storageRef = imageRef(storage, 'products/' + file.name);
+
+        uploadBytes(storageRef, file).then((snapshot) => {
+          image.value = snapshot
+        });
+        const uploadTask = uploadBytesResumable(storageRef, file);
+        uploadTask.on('state_changed', 
+        (snapshot) => {
+        // Observe state change events such as progress, pause, and resume
+        // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log('Upload is ' + progress + '% done');
+        switch (snapshot.state) {
+        case 'paused':
+          loadingState.value = 'Upload is paused'
+          break;
+        case 'running':
+          loadingState.value = 'Upload is ' + progress + '% done'
+          break;
+        }
+        }, 
+        (error) => {
+          loadingState.value = 'Upload Failed'
+        }, 
+        () => {
+    // Handle successful uploads on complete
+    // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+    getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+      image.value = downloadURL
+      console.log('File available at', downloadURL);
+          });
+        }
+      );
+            }
+
+      return { image, loadingState ,name, description, price, size, category, gender, addHandler,imageHandler  }
     }
 }
 </script>

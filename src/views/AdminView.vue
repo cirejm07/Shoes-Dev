@@ -30,7 +30,7 @@
     </div>
     <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-10"> 
       <!-- Cards -->
-      <div class="card" v-for="shoe in searchAllShoeFilter" :key="shoe.id"> 
+      <div class="card" v-for="shoe in shoes" :key="shoe.id"> 
         <img :src="shoe.imageUrl" alt="vue logo" class="w-full h-32 sm:h-48 object-cover">
         <div class="text-start m-4"> 
           <span class="font-bold block">{{ shoe.id }}</span>
@@ -164,7 +164,7 @@ export default {
       category: doc.data().category,
       description: doc.data().description,
       gender: doc.data().gender,
-      imageUrl: doc.data().imageUrl,
+      imageUrl: doc.data().image,
       name: doc.data().name,
       price: doc.data().price,
       size: doc.data().size

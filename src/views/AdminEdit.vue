@@ -43,9 +43,12 @@
     </div>
     <div class="col-4 mt-4">  
       <form @submit.prevent="updateHandler" class="container">
-        <div><img :src="imageUrl" :alt="name"></div>
+        <div><img :src="image" :alt="name"></div>
+        <div v-if="loadingState">
+          {{ loadingState }}
+        </div>
           <label for="image-url" class="form-label">Image Url</label>
-          <input  v-model="imageUrl" type="text" class="form-control" id="image-url" aria-describedby="emailHelp">
+           <input @change="imageHandler" type="file" class="form-control" id="image-url" aria-describedby="emailHelp">
       </form>
     </div>
   </div>
@@ -58,33 +61,34 @@ import { doc, getDoc, setDoc  } from '@firebase/firestore'
 import { ref } from '@vue/reactivity'
 import { useRoute, useRouter } from 'vue-router'
 import { onBeforeMount } from '@vue/runtime-core'
-
+import { getDownloadURL, getStorage, ref as imageRef, uploadBytes, uploadBytesResumable } from '@firebase/storage'
 
 export default {
     name:'AdminEdit',
     setup() {
-    const cityId = ref(null)
+    const shoeId = ref(null)
     const route = useRoute()
     const router = useRouter()
     const shoeRef = ([])
-    cityId.value = route.params.id
+    shoeId.value = route.params.id
     
-      const imageUrl = ref(null)
+      const image = ref(null)
       const name = ref(null)
       const description = ref(null)
       const price = ref(null)
       const size = ref(null)
       const category = ref(null)
       const gender = ref(null)
-   
+      const loadingState = ref(null)
+
     onBeforeMount(async () => {
-    const docRef = doc(shoesCollectionRef, cityId.value);
+    const docRef = doc(shoesCollectionRef, shoeId.value);
     shoeRef.value = docRef
     console.log(shoeRef)
     const docSnap = await getDoc(docRef)
     if (docSnap.exists()) {
-      let ImageUrlData = docSnap.data().imageUrl
-      imageUrl.value = ImageUrlData
+      let ImageUrlData = docSnap.data().image
+      image.value = ImageUrlData
       let nameData = docSnap.data().name
       name.value = nameData
       let descriptionData = docSnap.data().description
@@ -106,7 +110,7 @@ export default {
   const updateHandler = async () => {
    try{
      await setDoc(shoeRef.value, {
-      imageUrl: imageUrl.value,
+      image: image.value,
       name: name.value,
       description: description.value,
       price: price.value,
@@ -114,7 +118,7 @@ export default {
       category: category.value,
       gender: gender.value
     })
-    alert(`Shoe ID: ${cityId.value} has been updated`)
+    alert(`Shoe ID: ${shoeId.value} has been updated`)
     router.push('/admin')
    }
    catch(err){
@@ -122,9 +126,48 @@ export default {
    }
   }
 
+  const imageHandler = (e) => {
+        var file = e.target.files[0]
+        console.log(file)
+        var storage = getStorage();
+        var storageRef = imageRef(storage, 'products/' + file.name);
+
+        uploadBytes(storageRef, file).then((snapshot) => {
+          image.value = snapshot
+        });
+        const uploadTask = uploadBytesResumable(storageRef, file);
+        uploadTask.on('state_changed', 
+        (snapshot) => {
+        // Observe state change events such as progress, pause, and resume
+        // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log('Upload is ' + progress + '% done');
+        switch (snapshot.state) {
+        case 'paused':
+          loadingState.value = 'Upload is paused'
+          break;
+        case 'running':
+          loadingState.value = 'Upload is ' + progress + '% done'
+          break;
+        }
+        }, 
+        (error) => {
+          loadingState.value = 'Upload Failed'
+        }, 
+        () => {
+    // Handle successful uploads on complete
+    // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+    getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+      image.value = downloadURL
+      console.log('File available at', downloadURL);
+          });
+        }
+      );
+            }
+
       
 
-    return { cityId, shoeRef, imageUrl, name,  description, price, size, category, gender, updateHandler }
+    return { imageHandler, loadingState ,shoeId, shoeRef, image, name,  description, price, size, category, gender, updateHandler }
     }
 }
 </script>
