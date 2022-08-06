@@ -1,31 +1,36 @@
 <template>
-  <div class="profile container">
+  <div class="profile container max-w-md">
     <form @submit.prevent="updateHandler" class="container">
-    <!-- left-side -->
-       <div class="d-flex justify-center"><img :src="image" :alt="name"></div>
-          <div v-if="loadingState">
-            {{ loadingState }}
+    <div class="row">
+      <div class="col-6">
+        <div class="my-3">
+          <label for="image-url" class="form-label">Image</label>
+          <input @change="imageHandler" type="file" class="form-control" id="image-url" aria-describedby="emailHelp">
         </div>
-         <div class="my-3">
-           <label for="image-url" class="form-label">Image</label>
-           <input @change="imageHandler" type="file" class="form-control" id="image-url" aria-describedby="emailHelp">
-         </div>
-         <!-- right-side -->
         <div class="mb-3 col">
           <label for="name" class="form-label">Name</label>
           <input  v-model="name" type="text" class="form-control" id="name" aria-describedby="emailHelp">
         </div>
-         <div class="mb-3 col">
+        <div class="mb-3 col">
           <label for="address" class="form-label">Address</label>
           <input  v-model="address" type="text" class="form-control" id="address" aria-describedby="emailHelp">
         </div>
-         <div class="col-4 my-4 mx-auto">  
-       <button type="submit" class="btn btn-primary">Update Profile</button>
+        <div class="col-4 my-4 mx-auto">  
+          <button type="submit" class="btn btn-primary">Update Profile</button>
+        </div>
+      </div>
+
+    <div class="col-6">
+        <div class="d-flex justify-center"><img :src="image" :alt="name" style="width: 250px; height: 300px;"></div>
+          <div v-if="loadingState">
+            {{ loadingState }}
+          </div> 
+        </div>
+      </div>
+    </form>
   </div>
-      </form>
-    </div>
-   
 </template>
+
 
 <script>
 import { doc, getDoc, setDoc } from '@firebase/firestore'
