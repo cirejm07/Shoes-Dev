@@ -42,7 +42,7 @@
       </form>
     </div>
   <div class="col-4 mt-4">
-      <div><img :src="image" alt=""></div>
+      <div v-if="image" class="d-flex justify-center"><img class="img-fluid" :src="image" alt=""></div>
       <div v-if="loadingState">{{ loadingState }}</div>
         <label for="image-url" class="form-label mt-4">Image</label>
         <input @change="imageHandler" type="file" class="form-control" id="image-url" aria-describedby="emailHelp">
@@ -100,6 +100,7 @@ export default {
         console.log(file)
         var storage = getStorage();
         var storageRef = imageRef(storage, 'products/' + file.name);
+        
 
         uploadBytes(storageRef, file).then((snapshot) => {
           image.value = snapshot

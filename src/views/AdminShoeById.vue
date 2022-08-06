@@ -50,7 +50,7 @@ export default {
     console.log(shoeRef)
     const docSnap = await getDoc(docRef)
     if (docSnap.exists()) {
-      let ImageUrlData = docSnap.data().imageUrl
+      let ImageUrlData = docSnap.data().image
       imageUrl.value = ImageUrlData
       let nameData = docSnap.data().name
       name.value = nameData

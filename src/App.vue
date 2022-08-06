@@ -1,9 +1,9 @@
 <template>
-  <WelcomeNav :userCredImg="userCredImg" :title="getId === '7W29HGeCdfPpqASfWeHlZkOY9t63' ? 'Admin' : 'Hi'" :user="userName" :signoutHandler="signoutHandler" :isShowModalLoginHandler="isShowModalLoginHandler" />
-  <div v-if="isShow && getId === '7W29HGeCdfPpqASfWeHlZkOY9t63'">
+  <WelcomeNav :getId="getId" :profileName="profileName" :userCredImg="userCredImg" :title="getId === '2TX6jUtjOZTACQuNJ5WFFUx8t5P2' ? 'Admin' : 'Hi'" :user="userName" :signoutHandler="signoutHandler" :isShowModalLoginHandler="isShowModalLoginHandler" />
+  <div v-if="isShow && getId === '2TX6jUtjOZTACQuNJ5WFFUx8t5P2'">
    <AdminNav :user="userName" />
   </div>
-  <div v-else-if="getId !== '7W29HGeCdfPpqASfWeHlZkOY9t63'">
+  <div v-else-if="getId !== '2TX6jUtjOZTACQuNJ5WFFUx8t5P2'">
     <CustomerNavVue :user="userName"/>
   </div>
   <div>
@@ -43,6 +43,7 @@ export default {
     const getId = ref(null)
     const route = useRoute()
     const userCredImg = ref(null)
+    const profileName = ref(null)
    onBeforeMount(() => {
     onAuthStateChanged(auth, (user) => {
       if(!user){
@@ -51,14 +52,14 @@ export default {
       } else if(user && route.path == '/login' ||  user && route.path == '/register'){
         router.replace('/')
         isShow.value = true
-      } else if (user && getId.value === '7W29HGeCdfPpqASfWeHlZkOY9t63'){
+      } else if (user && getId.value === '2TX6jUtjOZTACQuNJ5WFFUx8t5P2'){
          isShow.value = true
          router.replace('/admin')
          userName.value = user.email.split('@')[0]
       } else if ( 
-        route.path == '/admin' && user.uid != '7W29HGeCdfPpqASfWeHlZkOY9t63' 
+        route.path == '/admin' && user.uid != '2TX6jUtjOZTACQuNJ5WFFUx8t5P2' 
         ||
-        route.path == '/add' && user.uid != '7W29HGeCdfPpqASfWeHlZkOY9t63' 
+        route.path == '/add' && user.uid != '2TX6jUtjOZTACQuNJ5WFFUx8t5P2' 
         ||
         route.path == '/admin' && !user
         ||
@@ -74,7 +75,8 @@ export default {
         userName.value = user.email.split('@')[0]
        getDoc(doc(usersCollectionRef, user.uid))
        .then(doc => {
-        userCredImg.value = doc.data().image
+          userCredImg.value = doc.data().image
+          profileName.value = doc.data().name
         console.log(doc.data())
         console.log(userCredImg);
         })
@@ -87,7 +89,7 @@ export default {
    }
 
 
-   return { isShow,userName, getId, userCredImg ,isShowModalLogin, isShowModalLoginHandler }
+   return { isShow,userName, profileName ,getId, userCredImg ,isShowModalLogin, isShowModalLoginHandler }
   },
   methods: {
     

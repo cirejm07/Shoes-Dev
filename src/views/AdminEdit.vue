@@ -43,7 +43,7 @@
     </div>
     <div class="col-4 mt-4">  
       <form @submit.prevent="updateHandler" class="container">
-        <div><img :src="image" :alt="name"></div>
+        <div v-if="image" class="d-flex justify-center"><img class="img-fluid" :src="image" alt=""></div>
         <div v-if="loadingState">
           {{ loadingState }}
         </div>

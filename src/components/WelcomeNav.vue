@@ -24,22 +24,43 @@
         class="collapse navbar-collapse"
         id="navbarSupportedContent"
       >
-        <!-- Split dropstart button -->
-        <div class="btn-group dropstart ms-auto">
+        
+
+      <div class="btn-group dropstart ms-auto">
+  <button type="button" class="btn btn-transparent dropdown-toggle d-flex flex-wrap align-middle justify-center" data-bs-toggle="dropdown" aria-expanded="false">
+     <span class="me-2 my-auto">{{ title }}, {{ profileName }}</span>
+            <span v-if="userCredImg"> <img class="user-img" :src="userCredImg" :alt="user"> </span>
+            <span v-else><fa icon="user"></fa> </span>
+  </button>
+   <ul class="dropdown-menu">
+             <li>
+                <router-link :to="{path:`/profile/${getId}`}" class="dropdown-item">Profile</router-link>
+              </li>
+              <li>
+                <button @click="signoutHandler" class="dropdown-item">
+                  Sign out
+                </button>
+              </li>
+            </ul>
+</div>
+
+
+        <!-- <div class="btn-group dropstart ms-auto">
           <button
             type="button"
-            class="btn btn-light dropdown-toggle dropdown-toggle-split"
+            class="btn btn-light dropdown-toggle dropdown-toggle"
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            <span>{{ title }}, {{ user }}</span>
+           
           </button>
           <button
             type="button"
-            class="btn btn-light dropdown-toggle dropdown-toggle-split"
+            class="btn btn-light dropdown-toggle dropdown-toggle"
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
+             <span>{{ title }}, {{ user }}</span>
             <span v-if="userCredImg"> <img class="user-img" :src="userCredImg" :alt="user"> </span>
             <span v-else><fa icon="user"></fa> </span>
             <ul class="dropdown-menu">
@@ -49,8 +70,10 @@
                 </button>
               </li>
             </ul>
+            
           </button>
-        </div>
+        </div> -->
+
       </div>
       <div v-else class="nav-right collapse navbar-collapse" id="navbarSupportedContent">
         <!-- Split dropstart button -->
@@ -67,7 +90,7 @@
 import ModalLogin from './ModalLogin.vue';
 export default {
     name: "WelcomeNav",
-    props: ["user", "signoutHandler", "title", "isShowModalLoginHandler", "userCredImg"],
+    props: ["user", "signoutHandler", "title", "isShowModalLoginHandler", "userCredImg", "getId", "profileName"],
     setup() { },
     components: { ModalLogin }
 };
@@ -92,7 +115,7 @@ img {
   border: 1px solid beige;
 }
 
-.dropstart .dropdown-toggle-split::before {
+.dropstart .dropdown-toggle::before {
   display: none;
 }
 
