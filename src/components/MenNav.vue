@@ -6,8 +6,8 @@
         <a href="/" class="text-sm md:text-xl"> </a>
       </h1>
 
-      <div class="px-4 cursor-pointer md:hidden underline font-bold text-3xl" id="burger"> 
-        = 
+      <div class="px-4 cursor-pointer md:hidden font-bold text-3xl" id="burger"> 
+        <!-- =  -->
       </div>
     </div>
 
@@ -53,7 +53,7 @@ span::before {
   position: absolute;
   bottom: 0;
   left: 0;
-  background-color: #000;
+  background-color: rgb(32, 59, 179);
   transition: all 0.5s ease;
 }
 

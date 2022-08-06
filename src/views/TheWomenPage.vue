@@ -20,7 +20,8 @@
           <span class="block text-gray-500 text-sm">{{ shoe.gender }}</span>
           <span class="block text-gray-500 text-sm">{{ shoe.category }}</span>
           <span class="block text-gray-500 text-sm">₱ {{ shoe.price }}</span>
-        </div>
+        </div><hr>
+        <p class="font-bold text-pink-400">Read More..</p>
       </router-link>
       </div>
     </div>
@@ -39,7 +40,8 @@
           <span class="block text-gray-500 text-sm">{{ shoe.gender }}</span>
           <span class="block text-gray-500 text-sm">{{ shoe.category }}</span>
           <span class="block text-gray-500 text-sm">₱ {{ shoe.price }}</span>
-        </div>
+        </div><hr>
+        <p class="font-bold text-pink-400">Read More..</p>
       </router-link>
       </div>
     </div>
@@ -58,7 +60,8 @@
           <span class="block text-gray-500 text-sm">{{ shoe.gender }}</span>
           <span class="block text-gray-500 text-sm">{{ shoe.category }}</span>
           <span class="block text-gray-500 text-sm">₱ {{ shoe.price }}</span>
-        </div>
+        </div><hr>
+        <p class="font-bold text-pink-400">Read More..</p>
       </router-link>
       </div>
     </div>
@@ -77,7 +80,8 @@
           <span class="block text-gray-500 text-sm">{{ shoe.gender }}</span>
           <span class="block text-gray-500 text-sm">{{ shoe.category }}</span>
           <span class="block text-gray-500 text-sm">₱ {{ shoe.price }}</span>
-        </div>
+        </div><hr>
+        <p class="font-bold text-pink-400">Read More..</p>
       </router-link>
       </div>
     </div>
@@ -96,20 +100,21 @@
           <span class="block text-gray-500 text-sm">{{ shoe.gender }}</span>
           <span class="block text-gray-500 text-sm">{{ shoe.category }}</span>
           <span class="block text-gray-500 text-sm">₱ {{ shoe.price }}</span>
-        </div>
+        </div><hr>
+        <p class="font-bold text-pink-400">Read More..</p>
       </router-link>
       </div>
     </div>
   </div>
 
-    <h4 class="mt-12 font-bold pb-2 border-b border-gray-200">Most Popular</h4>
+    <!-- <h4 class="mt-12 font-bold pb-2 border-b border-gray-200">Most Popular</h4>
     
     <div class="mt-8"> 
-      <!-- cards -->
+      cards
     </div>
     <div class="flex justify-center">  
       <div class="bg-gray-200 btn">Load more..</div>
-    </div>
+    </div> -->
 </div>
 </main>
 </div>

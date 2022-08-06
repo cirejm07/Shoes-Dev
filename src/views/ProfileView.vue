@@ -1,5 +1,5 @@
 <template>
-  <div class="profile container max-w-md">
+  <div class="profile container max-w-md py-8">
     <form @submit.prevent="updateHandler" class="container">
     <div class="row">
       <div class="col-6">

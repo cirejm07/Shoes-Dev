@@ -1,11 +1,11 @@
 <template>
-<div class="container mt-2 d-flex justify-content-center align-items-center">
+<div class="container mt-8 d-flex justify-content-center align-items-center">
  <div class="row container">
     <div class="col-md-6 d-md-flex justify-content-md-end">
         <div>
             <img :src="imageUrl" :alt="name">
             <div class="flex">
-                <p @click="backHistoryHandler" class="btn btn-outline-dark mt-3">Back</p>
+                <p @click="backHistoryHandler" class="btn btn-outline-primary mt-3">Back</p>
             </div>
         </div>
     </div>
@@ -14,7 +14,7 @@
         <p>{{ gender }} shoe</p>
         <p>₱ {{ price }}</p>
         <img :src="imageUrl" style="width: 50px; height: 50px; border: 1px solid black; border-radius: 5px;">
-        <p class="btn btn-dark border rounded-1 mt-3">Add to cart</p>
+        <p class="btn btn-primary border rounded-1 mt-3">Add to cart</p>
         <p>{{ description }}</p>
     </div>
  </div>

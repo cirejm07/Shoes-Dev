@@ -11,8 +11,8 @@
         </div>
         <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 xl:w-8/12">
           <div class="px-6 py-12 md:px-12">
-            <h2 class="text-2xl font-bold mb-4">About Us</h2>
-            <p class="uppercase text-red-600 font-bold mb-6 flex items-center">
+            <h2 class="text-2xl font-bold mb-4 uppercase">About Us</h2>
+            <p class="uppercase text-blue-600 font-bold mb-6 flex items-center">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="w-4 h-4 mr-2">
                 <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
                 <path fill="currentColor"
@@ -40,13 +40,13 @@
   </section>
   <!-- Section: Design Block -->
   <section class="mb-32 text-gray-800 text-center">
-    <h2 class="text-3xl font-bold mb-32 uppercase">Meet the <u class="text-green-600">team</u></h2>
+    <h2 class="text-3xl font-bold mb-32 uppercase">Meet the <u class="text-blue-600">team</u></h2>
 
     <div class="grid gap-x-6 lg:gap-x-12 md:grid-cols-3">
       <div class="mb-24 md:mb-0">
         <div class="rounded-lg shadow-lg h-full block bg-white">
           <div class="flex justify-center">
-            <div class="flex justify-center" style="margin-top: -75px">
+            <div class="flex justify-center hover:scale-110 ease-in-out duration-300" style="margin-top: -75px">
               <img src="https://netstorage-kami.akamaized.net/images/1a7b11fdafdee594.png" class="rounded-full mx-auto shadow-lg" alt=""
                 style="width: 150px" />
             </div>
@@ -82,7 +82,7 @@
       <div class="mb-24 md:mb-0">
         <div class="rounded-lg shadow-lg h-full block bg-white">
           <div class="flex justify-center">
-            <div class="flex justify-center" style="margin-top: -75px">
+            <div class="flex justify-center hover:scale-110 ease-in-out duration-300" style="margin-top: -75px">
               <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" class="rounded-full mx-auto shadow-lg" alt=""
                 style="width: 150px" />
             </div>
@@ -119,8 +119,8 @@
       <div class="">
         <div class="rounded-lg shadow-lg h-full block bg-white">
           <div class="flex justify-center">
-            <div class="flex justify-center" style="margin-top: -75px">
-              <img src="https://mdbootstrap.com/img/new/avatars/15.jpg" class="rounded-full mx-auto shadow-lg" alt=""
+            <div class="flex justify-center hover:scale-110 ease-in-out duration-300" style="margin-top: -75px">
+              <img src="https://i.pinimg.com/474x/4b/71/f8/4b71f8137985eaa992d17a315997791e.jpg" class="rounded-full mx-auto shadow-lg" alt=""
                 style="width: 150px" />
             </div>
           </div>

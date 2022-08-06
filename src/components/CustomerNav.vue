@@ -1,60 +1,58 @@
 <template>
-  <div class="d-md-flex justify-content-center align-items-center">
+
+  <div class="d-md-flex justify-content-center align-items-center bg-blue-200">
     <div class="me-auto"></div>
-    <div class="text-center ms-auto my-3">
-      <!-- <router-link to="/men">Men</router-link> &nbsp;
-    <router-link to="/women">Women</router-link> &nbsp;
-    <router-link to="/unisex">Unisex</router-link> -->
-      <div class=" py-3 px-4 mx-auto max-w-screen-xl md:px-6">
-        <div class="flex items-center">
-          <ul class="d-md-flex flex-row m-auto space-x-4 text-xs font-medium md:space-x-6 md:text-base">
+    <div class="text-center ms-auto">
+    
+      <div class="flex px-4 mx-auto max-w-screen-xl md:px-6">
+        <div class="">
+          <ul class="flex space-x-3 flex-row m-auto text-sm font-medium md:space-x-6 md:text-base">
             <li>
               <router-link
                 to="/"
-                class="text-gray-900 dark:text-white uppercase"
-                aria-current="page"
+                class="text-blue-700 uppercase"
                 >Home</router-link
               >
             </li>
             <li>
               <router-link
                 to="/men"
-                class="text-gray-900 dark:text-white uppercase"
+                class="text-blue-700 uppercase"
                 >Men's</router-link
               >
             </li>
             <li>
               <router-link
                 to="/women"
-                class="text-gray-900 dark:text-white uppercase"
+                class="text-blue-700 uppercase"
                 >Women's</router-link
               >
             </li>
             <li>
               <router-link
                 to="/unisex"
-                class="text-gray-900 dark:text-white uppercase"
-                >Unisex's</router-link
+                class="text-blue-700 uppercase"
+                >Unisex</router-link
               >
             </li>
             <li>
               <router-link
                 to="/about"
-                class="text-gray-900 dark:text-white uppercase"
+                class="text-blue-700 uppercase"
                 >About</router-link
               >
             </li>
             <li>
               <router-link
                 to="/contact"
-                class="text-gray-900 dark:text-white uppercase"
+                class="text-blue-700 uppercase"
                 >Contact</router-link
               >
             </li>
             <li>
               <router-link
                 to="/blog"
-                class="text-gray-900 dark:text-white uppercase"
+                class="text-blue-700 uppercase"
                 >Blog</router-link
               >
             </li>
@@ -62,23 +60,23 @@
         </div>
       </div>
     </div>
-    <div class="text-center my-3 ms-auto">
-      <div class="search border-bottom">
+    <div class="text-center py-3 px-3 ms-auto">
+      <div class="search">
         <fa icon="search" class="me-1" />
         <input @change="showListHandler" type="text" placeholder="Search" v-model="searchAllShoe"/>
-        <div>
-        </div>
+        
         <div v-if="isShowLists && searchAllShoe.value !== ''" class="search-lists ">
           <ul v-for="shoe in searchAllShoeFilter" :key="shoe.id" class="list-none">
           <li><router-link @click="setRefreshHandler" class="flex justify-between align-items-center bg-slate-100 border" :to="{path:`/shoe/${shoe.id}`}"> <span class="text-xs">{{ shoe.name }}</span> <img class="w-10 h-10 ms-5" :src="shoe.imageUrl" alt=""> </router-link>  </li>
         </ul>
         </div>
       </div>
+      
     </div>
-    <div class="cart">
+    <!-- <div class="cart">
       <fa icon="cart-shopping" class="mt-2 mx-3" />
       <span></span>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -148,7 +146,7 @@ li {
 }
 a {
   font-weight: bold;
-  color: #2c3e50;
+  /* color: blue; */
   text-decoration: none;
   position: relative;
 }
@@ -165,7 +163,7 @@ a::before {
 }
 
 a:hover {
-  color: #000 !important;
+  color: rgb(32, 59, 179) !important;
 }
 
 a:hover::before {
@@ -173,7 +171,7 @@ a:hover::before {
 }
 
 a.router-link-exact-active {
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid blue;
 }
 
 input[type="text"]:focus {
