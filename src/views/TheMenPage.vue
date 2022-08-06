@@ -12,9 +12,9 @@
     
     <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-10"> 
       <!-- Cards -->
-      <div class="card" v-for="shoe in shoes" :key="shoe.id"> 
+      <div class="card hover:scale-110 ease-in-out duration-300" v-for="shoe in shoes" :key="shoe.id"> 
          <router-link :to="{path:`/shoe/${shoe.id}`}">
-        <img :src="shoe.imageUrl" alt="vue logo" class="w-full h-32 sm:h-48 object-cover">
+        <img :src="shoe.imageUrl" alt="vue logo" class="w-full h-32 sm:h-48 object-cover bg-gradient-to-r from-sky-400">
         <div class="text-start m-4"> 
           <span class="font-bold">{{ shoe.name }}</span>
           <span class="block text-gray-500 text-sm">{{ shoe.gender }}</span>
@@ -31,9 +31,9 @@
     
     <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-10"> 
       <!-- Cards -->
-      <div class="card" v-for="shoe in basket" :key="shoe.id">
+      <div class="card hover:scale-110 ease-in-out duration-300" v-for="shoe in basket" :key="shoe.id">
         <router-link :to="{path:`/shoe/${shoe.id}`}">
-        <img :src="shoe.imageUrl" alt="vue logo" class="w-full h-32 sm:h-48 object-cover">
+        <img :src="shoe.imageUrl" alt="vue logo" class="w-full h-32 sm:h-48 object-cover bg-gradient-to-r from-sky-400">
         <div class="text-start m-4"> 
           <span class="font-bold">{{ shoe.name }}</span>
           <span class="block text-gray-500 text-sm">{{ shoe.gender }}</span>
@@ -50,9 +50,9 @@
     
     <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-10"> 
       <!-- Cards -->
-      <div class="card" v-for="shoe in walking" :key="shoe.id"> 
+      <div class="card hover:scale-110 ease-in-out duration-300" v-for="shoe in walking" :key="shoe.id"> 
          <router-link :to="{path:`/shoe/${shoe.id}`}">
-        <img :src="shoe.imageUrl" alt="vue logo" class="w-full h-32 sm:h-48 object-cover">
+        <img :src="shoe.imageUrl" alt="vue logo" class="w-full h-32 sm:h-48 object-cover bg-gradient-to-r from-sky-400">
         <div class="text-start m-4"> 
           <span class="font-bold">{{ shoe.name }}</span>
           <span class="block text-gray-500 text-sm">{{ shoe.gender }}</span>
@@ -69,9 +69,9 @@
     
     <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-10"> 
       <!-- Cards -->
-      <div class="card" v-for="shoe in running" :key="shoe.id"> 
+      <div class="card hover:scale-110 ease-in-out duration-300" v-for="shoe in running" :key="shoe.id"> 
          <router-link :to="{path:`/shoe/${shoe.id}`}">
-        <img :src="shoe.imageUrl" alt="vue logo" class="w-full h-32 sm:h-48 object-cover">
+        <img :src="shoe.imageUrl" alt="vue logo" class="w-full h-32 sm:h-48 object-cover bg-gradient-to-r from-sky-400">
         <div class="text-start m-4"> 
           <span class="font-bold">{{ shoe.name }}</span>
           <span class="block text-gray-500 text-sm">{{ shoe.gender }}</span>
@@ -88,9 +88,9 @@
     
     <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-10"> 
       <!-- Cards -->
-      <div class="card" v-for="shoe in training" :key="shoe.id"> 
+      <div class="card hover:scale-110 ease-in-out duration-300" v-for="shoe in training" :key="shoe.id"> 
          <router-link :to="{path:`/shoe/${shoe.id}`}">
-        <img :src="shoe.imageUrl" alt="vue logo" class="w-full h-32 sm:h-48 object-cover">
+        <img :src="shoe.imageUrl" alt="vue logo" class="w-full h-32 sm:h-48 object-cover bg-gradient-to-r from-sky-400">
         <div class="text-start m-4"> 
           <span class="font-bold">{{ shoe.name }}</span>
           <span class="block text-gray-500 text-sm">{{ shoe.gender }}</span>
