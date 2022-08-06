@@ -4,9 +4,9 @@
     <div class="me-auto"></div>
     <div class="text-center ms-auto">
     
-      <div class="flex px-4 mx-auto max-w-screen-xl md:px-6">
-        <div class="">
-          <ul class="flex space-x-3 flex-row m-auto text-sm font-medium md:space-x-6 md:text-base">
+      <div class="flex mx-auto max-w-screen-xl md:px-6">
+        <div class="flex">
+          <ul class="flex space-x-4 flex-row m-auto text-xs font-medium md:space-x-6 md:text-sm">
             <li>
               <router-link
                 to="/"
