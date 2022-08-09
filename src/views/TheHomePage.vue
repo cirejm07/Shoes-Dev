@@ -25,7 +25,7 @@
         </p>
         
         <router-link to="/men"><button
-          class="bg-blue-800 hover:bg-blue-500 text-white font-bold text-lg mt-2 py-3 px-4"
+          class="bg-blue-800 hover:bg-blue-500 text-white font-bold text-lg mt-2 py-3 px-4 hover:scale-95 ease-in-out duration-200"
         >
           Buy Now!
         </button></router-link>

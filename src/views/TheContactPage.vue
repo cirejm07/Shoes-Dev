@@ -90,8 +90,7 @@
               focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
               active:bg-blue-800 active:shadow-lg
               transition
-              duration-150
-              ease-in-out">Send</button>
+              hover:scale-105 ease-in-out duration-200">Send</button>
             </form>
           </div>
           <div class="grow-0 shrink-0 basis-auto w-full xl:w-7/12">

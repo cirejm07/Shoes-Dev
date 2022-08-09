@@ -1,6 +1,6 @@
 <template>
   <div
-              class="w-full md:w-1/2 p-6 flex flex-col flex-grow flex-shrink hover:scale-95 ease-in-out duration-300"
+              class="w-full md:w-1/2 p-6 flex flex-col flex-grow flex-shrink"
             >
               <div
                 class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg"
@@ -41,7 +41,7 @@
 
             <!--1/2 col -->
             <div
-              class="w-full md:w-1/2 p-6 flex flex-col flex-grow flex-shrink hover:scale-95 ease-in-out duration-300"
+              class="w-full md:w-1/2 p-6 flex flex-col flex-grow flex-shrink"
             >
               <div
                 class="flex-1 flex-row bg-white rounded-t rounded-b-none overflow-hidden shadow-lg"
