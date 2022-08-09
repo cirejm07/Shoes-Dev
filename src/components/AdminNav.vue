@@ -1,7 +1,7 @@
 <template>
   <div class="nav my-3">
-    <router-link to="/admin">Admin</router-link> &nbsp;
-    &nbsp; <router-link to="/add">Add</router-link>
+    <router-link to="/admin">Display All</router-link> &nbsp; |
+    &nbsp; <router-link to="/add">Add New</router-link>
   </div>
 </template>
 

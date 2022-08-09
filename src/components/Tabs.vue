@@ -14,7 +14,20 @@
         role="tab"
         aria-controls="tabs-home"
         aria-selected="true"
-        >Details</a
+        >Description</a
+      >
+    </li>
+    <li class="nav-item" role="presentation">
+      <a
+        href="#tabs-size"
+        class="nav-link block font-sans text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 my-2 hover:border-transparent hover:bg-gray-500 focus:border-transparent"
+        id="tabs-size-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#tabs-size"
+        role="tab"
+        aria-controls="tabs-size"
+        aria-selected="false"
+        >Size Details</a
       >
     </li>
     <li class="nav-item" role="presentation">
@@ -33,12 +46,20 @@
   </ul>
   <div class="tab-content" id="tabs-tabContent">
     <div
-      class="tab-pane fade show active"
+      class="tab-pane fade show active col-l"
       id="tabs-home"
       role="tabpanel"
       aria-labelledby="tabs-home-tab"
     >
-      {{ description }}
+      <p class="text-justify mt-8 w-auto px-10 m-6">{{ description }}</p>
+    </div>
+    <div
+      class="tab-pane fade"
+      id="tabs-size"
+      role="tabpanel"
+      aria-labelledby="tabs-size-tab"
+    >
+      <img class="m-auto overflow-auto" src="../assets/size.png" />
     </div>
     <div
       class="tab-pane fade"

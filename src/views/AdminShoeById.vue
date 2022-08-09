@@ -16,8 +16,9 @@
       <div
         class="col-lg-6 bg-blend-darken text-center border-2 pt-3"
       >
-        <span class="fw-bold lead">{{ name }}</span>
-        <p class="">Gender: {{ gender }}</p>
+        <span class="fw-bold text-lg">Shoe Brand: {{ brand }}</span>
+        <span class="fw-bold block">{{ name }}</span>
+        <p class="mt-1">Gender: {{ gender }}</p>
         <div class="pb-3 pt-2">
           <select name="" id="">
             <option value="" selected="selected">Select Color</option>
@@ -61,7 +62,7 @@
             "
           />
         </div>
-        <p class="btn btn-primary border rounded-1 mt-3 hover:scale-110 ease-in-out duration-200">Add to cart</p>
+        <p class="btn btn-primary border rounded-1 mt-3 hover:scale-110 ease-in-out duration-300">Add to cart</p>
 
         <!-- <p>{{ description }}</p> -->
       </div>
@@ -107,6 +108,7 @@ export default {
     const shoeRef = [];
     cityId.value = route.params.id;
     const imageUrl = ref(null);
+    const brand = ref(null);
     const name = ref(null);
     const description = ref(null);
     const price = ref(null);
@@ -121,6 +123,8 @@ export default {
       if (docSnap.exists()) {
         let ImageUrlData = docSnap.data().image;
         imageUrl.value = ImageUrlData;
+        let brandData = docSnap.data().brand;
+        brand.value = brandData;
         let nameData = docSnap.data().name;
         name.value = nameData;
         let descriptionData = docSnap.data().description;
@@ -148,6 +152,7 @@ export default {
       cityId,
       shoeRef,
       imageUrl,
+      brand,
       name,
       description,
       price,

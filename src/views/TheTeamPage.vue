@@ -20,10 +20,10 @@
                 </svg>Every Shoe has a Story.
             </p>
             <p class="text-gray-500 mb-6">
-              Here at Shoes.dev, we realize that style and prosperity begin with the correct shoes. We likewise understand that effectively finding the size and style to meet your requirements is vital to your web-based shopping knowledge. Since beginning our web-based business website in 2009, we’ve been endeavoring to present to you that perfect shopping experience. We pride ourselves on conveying hard-to-discover styles, sizes and widths since we realize that each individual’s needs contrast. Regardless of whether you’re experiencing issues looking over our vast determination of different shoes or you have a straightforward inquiry, our client benefit group is prepared and willing to help.
+              Here at Shoes.dev, we realize that style and prosperity begin with the correct shoes. We likewise understand that effectively finding the size and style to meet your requirements is vital to your web-based shopping knowledge. Since beginning our web-based business website in 2022, we’ve been endeavoring to present to you that perfect shopping experience. We pride ourselves on conveying hard-to-discover styles, sizes and widths since we realize that each individual’s needs contrast. Regardless of whether you’re experiencing issues looking over our vast determination of different shoes or you have a straightforward inquiry, our client benefit group is prepared and willing to help.
             </p>
             <p class="text-gray-500">
-              Some time before our online business, our family shoe stores, fatherly shoe store Footwear in Indianapolis, IN, opened its entryways in 1886. Today we are glad to state that we have the longest constantly running shoe store in the United States. The life span of our physical business is a demonstration of our duty to you and the majority of our clients. We realize that on the off chance that you are not content with our items and administrations, we are not carrying out our responsibility. This is the reason we take a stab at 100% consumer loyalty, offer a 105% value coordinate guarantee and additionally free delivery and returns.
+              Some time before our online business, our family shoe stores, fatherly shoe store Footwear in the Philippines, opened its entryways earlier this year. Today we are glad to state that we have the most innovative running shoe store in the Philippines. The life span of our physical business is a demonstration of our duty to you and the majority of our clients. We realize that on the off chance that you are not content with our items and administrations, we are not carrying out our responsibility. This is the reason we take a stab at 100% consumer loyalty, offer a 105% value coordinate guarantee and additionally free delivery and returns.
 
 Next time you require another match of kicks for this experience we call life, our group is here to ensure that you get the execution that you require from your apparatus. Regardless of whether you are difficult to fit or have explicit requirements, let Shoes.dev enable you to make progress toward your objective.
             </p>
@@ -114,12 +114,12 @@ Next time you require another match of kicks for this experience we call life, o
         <div class="rounded-lg shadow-lg h-full block bg-white">
           <div class="flex justify-center">
             <div class="flex justify-center hover:scale-110 ease-in-out duration-300" style="margin-top: -75px">
-              <img src="https://i.pinimg.com/474x/4b/71/f8/4b71f8137985eaa992d17a315997791e.jpg" class="rounded-full mx-auto shadow-lg" alt=""
+              <img src="../assets/fred.jpg" class="rounded-full mx-auto shadow-lg" alt=""
                 style="width: 150px" />
             </div>
           </div>
           <div class="p-6">
-            <h5 class="text-lg font-bold mb-4">Sir Wine the Pooh</h5>
+            <h5 class="text-lg font-bold mb-4">Winefredo S. Sailes</h5>
             <p class="mb-2 text-xl">Web Designer</p>
             <p class="mb-6">HTML, CSS, JS, REACT, VUE, BOOTSTRAP, TAILWINDCSS </p>
             
