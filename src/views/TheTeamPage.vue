@@ -20,18 +20,12 @@
                 </svg>Every Shoe has a Story.
             </p>
             <p class="text-gray-500 mb-6">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum maxime voluptas
-              ipsam aliquam itaque cupiditate provident architecto expedita harum culpa odit,
-              inventore rem molestias laborum repudiandae corporis pariatur quo eius iste!
-              Quaerat, assumenda voluptates! Molestias, recusandae? Maxime fuga omnis ducimus.
+              Here at Shoes.dev, we realize that style and prosperity begin with the correct shoes. We likewise understand that effectively finding the size and style to meet your requirements is vital to your web-based shopping knowledge. Since beginning our web-based business website in 2009, we’ve been endeavoring to present to you that perfect shopping experience. We pride ourselves on conveying hard-to-discover styles, sizes and widths since we realize that each individual’s needs contrast. Regardless of whether you’re experiencing issues looking over our vast determination of different shoes or you have a straightforward inquiry, our client benefit group is prepared and willing to help.
             </p>
             <p class="text-gray-500">
-              Commodi ut nisi assumenda alias maxime necessitatibus ad rem repellat explicabo,
-              reiciendis illum suscipit iusto? Provident dignissimos similique, reiciendis
-              inventore accusantium unde mollitia, deleniti quae atque error id perspiciatis
-              illum. Laboriosam aperiam ab illo dignissimos obcaecati corporis similique a odio,
-              optio iste quis placeat alias amet rerum sint quos dolor pariatur inventore
-              possimus ad consequuntur fugiat perferendis consectetur laudantium.
+              Some time before our online business, our family shoe stores, fatherly shoe store Footwear in Indianapolis, IN, opened its entryways in 1886. Today we are glad to state that we have the longest constantly running shoe store in the United States. The life span of our physical business is a demonstration of our duty to you and the majority of our clients. We realize that on the off chance that you are not content with our items and administrations, we are not carrying out our responsibility. This is the reason we take a stab at 100% consumer loyalty, offer a 105% value coordinate guarantee and additionally free delivery and returns.
+
+Next time you require another match of kicks for this experience we call life, our group is here to ensure that you get the execution that you require from your apparatus. Regardless of whether you are difficult to fit or have explicit requirements, let Shoes.dev enable you to make progress toward your objective.
             </p>
           </div>
         </div>
