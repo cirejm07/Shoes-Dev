@@ -4,13 +4,17 @@
   <div class="row justify-content-center">
     <div class="mb-3 col-4">
       <form @submit.prevent="updateHandler" class="container">
+      <div class="mb-3 col">
+          <label for="brand" class="form-label">Brand</label>
+          <input  v-model="brand" type="text" class="form-control" id="brand" aria-describedby="emailHelp">
+        </div>
         <div class="mb-3 col">
           <label for="name" class="form-label">Name</label>
           <input  v-model="name" type="text" class="form-control" id="name" aria-describedby="emailHelp">
         </div>
         <div class="mb-3 col">
           <label for="description" class="form-label">Description</label>
-          <textarea class="border"  v-model="description" name="" id="description" cols="53" rows="3" placeholder="Describe the product"></textarea>
+          <textarea class="border"  v-model="description" name="" id="description" cols="53" rows="8" placeholder="Describe the product"></textarea>
         </div>
         <div class="row justify-content-center">
         <div class="mb-3 col-6">
@@ -38,7 +42,7 @@
             <option value="Training & Gym">Training & Gym</option>
           </select>
         </div>
-          <button type="submit" class="btn btn-primary">Edit Shoe</button>
+          <button type="submit" class="btn btn-primary">Update</button>
       </form>
     </div>
     <div class="col-4 mt-4">  
@@ -73,6 +77,7 @@ export default {
     shoeId.value = route.params.id
     
       const image = ref(null)
+      const brand = ref(null)
       const name = ref(null)
       const description = ref(null)
       const price = ref(null)
@@ -89,6 +94,8 @@ export default {
     if (docSnap.exists()) {
       let ImageUrlData = docSnap.data().image
       image.value = ImageUrlData
+      let brandData = docSnap.data().brand
+      brand.value = brandData
       let nameData = docSnap.data().name
       name.value = nameData
       let descriptionData = docSnap.data().description
@@ -111,6 +118,7 @@ export default {
    try{
      await setDoc(shoeRef.value, {
       image: image.value,
+      brand: brand.value,
       name: name.value,
       description: description.value,
       price: price.value,
@@ -167,7 +175,7 @@ export default {
 
       
 
-    return { imageHandler, loadingState ,shoeId, shoeRef, image, name,  description, price, size, category, gender, updateHandler }
+    return { imageHandler, loadingState ,shoeId, shoeRef, image, brand, name,  description, price, size, category, gender, updateHandler }
     }
 }
 </script>

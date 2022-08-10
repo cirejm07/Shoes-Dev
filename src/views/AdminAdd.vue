@@ -4,13 +4,17 @@
   <div class="row justify-content-center">
     <div class="mb-3 col-4">
       <form @submit.prevent="addHandler"  class="container">
+      <div class="mb-3 col">
+          <label for="brand" class="form-label">Brand</label>
+          <input v-model="brand" type="text" class="form-control" id="brand" aria-describedby="emailHelp">
+        </div>
         <div class="mb-3 col">
           <label for="name" class="form-label">Name</label>
           <input v-model="name" type="text" class="form-control" id="name" aria-describedby="emailHelp">
         </div>
         <div class="mb-3 col">
           <label for="description" class="form-label">Description</label>
-          <textarea class="border" v-model="description" name="" id="description" cols="53" rows="3" placeholder="Describe the product"></textarea>
+          <textarea class="border" v-model="description" name="" id="description" cols="53" rows="8" placeholder="Describe the product"></textarea>
         </div>
         <div class="row justify-content-center">
         <div class="mb-3 col-6">
@@ -67,6 +71,7 @@ export default {
 
 
       const image = ref(null)
+      const brand = ref(null)
       const name = ref(null)
       const description = ref(null)
       const price = ref(null)
@@ -80,6 +85,7 @@ export default {
          try{
           const addDocument = await addDoc(shoesCollectionRef, {
           image:image.value, 
+          brand: brand.value,
           name: name.value, 
           description: description.value, 
           price: price.value, 
@@ -135,7 +141,7 @@ export default {
       );
             }
 
-      return { image, loadingState ,name, description, price, size, category, gender, addHandler,imageHandler  }
+      return { image, loadingState, brand, name, description, price, size, category, gender, addHandler,imageHandler  }
     }
 }
 </script>

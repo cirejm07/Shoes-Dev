@@ -25,7 +25,7 @@
         </p>
         
         <router-link to="/men"><button
-          class="bg-blue-800 hover:bg-blue-500 text-white font-bold text-lg mt-2 py-3 px-4"
+          class="bg-blue-800 hover:bg-blue-500 text-white font-bold text-lg mt-2 py-3 px-4 hover:scale-95 ease-in-out duration-200"
         >
           Buy Now!
         </button></router-link>
@@ -57,11 +57,11 @@
               :to="{ path: `/shoe/${shoe.id}` }"
               class="flex flex-wrap no-underline hover:no-underline"
             >
-              <div class="w-full md:w-2/3 rounded-t">
+              <div class="w-full lg:w-2/3 rounded-t overflow-hidden">
                 <img
-                  style="height: 500px; width: 100%"
+                  style="height: 400px; width: auto; margin:auto"
                   :src="shoe.imageUrl"
-                  class="h-full w-full shadow"
+                  class="h-full w-full"
                 />
               </div>
 
@@ -70,28 +70,27 @@
                   class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg"
                 >
                   <div
-                    class="mt-3 w-full font-bold text-xl text-blue-700 px-6 uppercase"
+                    class="mt-3 w-full font-bold text-xl text-blue-700 px-6 uppercase border-b-2 pb-3"
                   >
-                    Trending
+                    Featured
                   </div>
                   <p
-                    class="w-full mt-2 text-gray-800 font-serif text-base px-6 mb-5"
+                    class="w-full mt-2 text-gray-800 font-bold text-xl px-6 mb-2"
+                  >
+                    {{ shoe.brand }}
+                  </p>
+                  <p
+                    class="w-full mt-2 text-gray-800 font-sans text-lg px-6 mb-4"
                   >
                     {{ shoe.name }}
                   </p>
-                  <p class="w-100 text-gray-800 font-serif text-base px-6 mb-5">
-                    <!-- {{ shoe.description }} -->
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Rem, suscipit. Impedit corporis amet dolorem inventore
-                    dignissimos cumque alias minima quod quae itaque laborum hic
-                    qui architecto, repellendus dicta tempore quidem voluptate
-                    dolor provident ipsam at soluta labore minus iusto?
-                    Molestias exercitationem tempora molestiae inventore quasi,
-                    nostrum enim nisi aliquam iure.
+                  <p class="w-100 text-gray-800 font-sans text-base px-6 mb-2 pb-2 h-40 md:h-72">
+                    {{ shoe.description }}
+                    
                   </p>
                 </div>
 
-                <div
+                <!-- <div
                   class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6"
                 >
                   <div class="flex items-center justify-between">
@@ -103,7 +102,7 @@
                     />
                     <p class="text-gray-600 text-xs md:text-sm">1 MIN READ</p>
                   </div>
-                </div>
+                </div> -->
               </div>
             </router-link>
           </div>
@@ -128,7 +127,7 @@
                   <p
                     class="gender-card w-full text-gray-600 text-xs md:text-sm px-6"
                   >
-                    Men
+                    Men's
                   </p>
                 </router-link>
               </div>
@@ -151,7 +150,7 @@
                   <p
                     class="gender-card w-full text-gray-600 text-xs md:text-sm px-6"
                   >
-                    Women
+                    Women's
                   </p>
                 </router-link>
               </div>
@@ -228,6 +227,7 @@ export default {
             description: doc.data().description,
             gender: doc.data().gender,
             imageUrl: doc.data().image,
+            brand: doc.data().brand,
             name: doc.data().name,
             price: doc.data().price,
             size: doc.data().size,

@@ -33,7 +33,7 @@
       <div class="card" v-for="shoe in searchAllShoeFilter" :key="shoe.id"> 
         <img :src="shoe.imageUrl" alt="vue logo" class="w-full h-32 sm:h-48 object-cover">
         <div class="text-start m-4"> 
-          <span class="font-bold block">{{ shoe.id }}</span>
+          <span class="font-bold block">{{ shoe.brand }}</span>
           <span class="font-bold block">{{ shoe.name }}</span>
           <span class="block text-gray-500 text-sm">{{ shoe.gender }}</span>
           <span class="block text-gray-500 text-sm">{{ shoe.category }}</span>
@@ -55,7 +55,7 @@
       <div class="card" v-for="shoe in maleShoes" :key="shoe.id"> 
         <img :src="shoe.imageUrl" alt="vue logo" class="w-full h-32 sm:h-48 object-cover">
         <div class="text-start m-4"> 
-          <span class="font-bold block">{{ shoe.id }}</span>
+          <span class="font-bold block">{{ shoe.brand }}</span>
           <span class="font-bold">{{ shoe.name }}</span>
           <span class="block text-gray-500 text-sm">{{ shoe.gender }}</span>
           <span class="block text-gray-500 text-sm">{{ shoe.category }}</span>
@@ -77,7 +77,7 @@
       <div class="card" v-for="shoe in femaleShoes" :key="shoe.id"> 
         <img :src="shoe.imageUrl" alt="vue logo" class="w-full h-32 sm:h-48 object-cover">
         <div class="text-start m-4"> 
-          <span class="font-bold block">{{ shoe.id }}</span>
+          <span class="font-bold block">{{ shoe.brand }}</span>
           <span class="font-bold">{{ shoe.name }}</span>
           <span class="block text-gray-500 text-sm">{{ shoe.gender }}</span>
           <span class="block text-gray-500 text-sm">{{ shoe.category }}</span>
@@ -99,7 +99,7 @@
       <div class="card" v-for="shoe in uniSexShoes" :key="shoe.id"> 
         <img :src="shoe.imageUrl" alt="vue logo" class="w-full h-32 sm:h-48 object-cover">
         <div class="text-start m-4"> 
-          <span class="font-bold block">{{ shoe.id }}</span>
+          <span class="font-bold block">{{ shoe.brand }}</span>
           <span class="font-bold">{{ shoe.name }}</span>
           <span class="block text-gray-500 text-sm">{{ shoe.gender }}</span>
           <span class="block text-gray-500 text-sm">{{ shoe.category }}</span>
@@ -165,6 +165,7 @@ export default {
       description: doc.data().description,
       gender: doc.data().gender,
       imageUrl: doc.data().image,
+      brand: doc.data().brand,
       name: doc.data().name,
       price: doc.data().price,
       size: doc.data().size
@@ -213,7 +214,7 @@ export default {
 
     
 
-    return {isLoading,searchAllShoe, searchAllShoeFilter , name, shoes, allShoes,maleShoes, isMaleShoes, maleShoesHandler, showAllShoeHandler, femaleShoes, isFemaleShoes, femaleShoesHandler, uniSexShoes, isUnisexShoes, unisexShoesHandler }
+    return {isLoading, searchAllShoe, searchAllShoeFilter , name, shoes, allShoes,maleShoes, isMaleShoes, maleShoesHandler, showAllShoeHandler, femaleShoes, isFemaleShoes, femaleShoesHandler, uniSexShoes, isUnisexShoes, unisexShoesHandler }
     },
     methods: {
         async deleteHandler (shoeId) {

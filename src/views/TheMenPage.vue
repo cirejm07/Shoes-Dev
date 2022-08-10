@@ -14,8 +14,9 @@
       <!-- Cards -->
       <div class="card hover:scale-110 ease-in-out duration-300" v-for="shoe in shoes" :key="shoe.id"> 
          <router-link :to="{path:`/shoe/${shoe.id}`}">
-        <img :src="shoe.imageUrl" alt="vue logo" class="w-full h-32 sm:h-48 object-cover bg-gradient-to-r from-sky-400">
+        <img :src="shoe.imageUrl" alt="Shoe Image" class="w-full h-32 sm:h-48 object-cover bg-gradient-to-r from-sky-400">
         <div class="text-start m-4"> 
+          <span class="font-bold block">{{ shoe.brand }}</span>
           <span class="font-bold">{{ shoe.name }}</span>
           <span class="block text-gray-500 text-sm">{{ shoe.gender }}</span>
           <span class="block text-gray-500 text-sm">{{ shoe.category }}</span>
@@ -35,8 +36,9 @@
       <!-- Cards -->
       <div class="card hover:scale-110 ease-in-out duration-300" v-for="shoe in basket" :key="shoe.id">
         <router-link :to="{path:`/shoe/${shoe.id}`}">
-        <img :src="shoe.imageUrl" alt="vue logo" class="w-full h-32 sm:h-48 object-cover bg-gradient-to-r from-sky-400">
+        <img :src="shoe.imageUrl" alt="Shoe Image" class="w-full h-32 sm:h-48 object-cover bg-gradient-to-r from-sky-400">
         <div class="text-start m-4"> 
+          <span class="font-bold block">{{ shoe.brand }}</span>
           <span class="font-bold">{{ shoe.name }}</span>
           <span class="block text-gray-500 text-sm">{{ shoe.gender }}</span>
           <span class="block text-gray-500 text-sm">{{ shoe.category }}</span>
@@ -55,8 +57,9 @@
       <!-- Cards -->
       <div class="card hover:scale-110 ease-in-out duration-300" v-for="shoe in walking" :key="shoe.id"> 
          <router-link :to="{path:`/shoe/${shoe.id}`}">
-        <img :src="shoe.imageUrl" alt="vue logo" class="w-full h-32 sm:h-48 object-cover bg-gradient-to-r from-sky-400">
+        <img :src="shoe.imageUrl" alt="Shoe Image" class="w-full h-32 sm:h-48 object-cover bg-gradient-to-r from-sky-400">
         <div class="text-start m-4"> 
+          <span class="font-bold block">{{ shoe.brand }}</span>
           <span class="font-bold">{{ shoe.name }}</span>
           <span class="block text-gray-500 text-sm">{{ shoe.gender }}</span>
           <span class="block text-gray-500 text-sm">{{ shoe.category }}</span>
@@ -75,8 +78,9 @@
       <!-- Cards -->
       <div class="card hover:scale-110 ease-in-out duration-300" v-for="shoe in running" :key="shoe.id"> 
          <router-link :to="{path:`/shoe/${shoe.id}`}">
-        <img :src="shoe.imageUrl" alt="vue logo" class="w-full h-32 sm:h-48 object-cover bg-gradient-to-r from-sky-400">
+        <img :src="shoe.imageUrl" alt="Shoe Image" class="w-full h-32 sm:h-48 object-cover bg-gradient-to-r from-sky-400">
         <div class="text-start m-4"> 
+          <span class="font-bold block">{{ shoe.brand }}</span>
           <span class="font-bold">{{ shoe.name }}</span>
           <span class="block text-gray-500 text-sm">{{ shoe.gender }}</span>
           <span class="block text-gray-500 text-sm">{{ shoe.category }}</span>
@@ -95,8 +99,9 @@
       <!-- Cards -->
       <div class="card hover:scale-110 ease-in-out duration-300" v-for="shoe in training" :key="shoe.id"> 
          <router-link :to="{path:`/shoe/${shoe.id}`}">
-        <img :src="shoe.imageUrl" alt="vue logo" class="w-full h-32 sm:h-48 object-cover bg-gradient-to-r from-sky-400">
+        <img :src="shoe.imageUrl" alt="Shoe Image" class="w-full h-32 sm:h-48 object-cover bg-gradient-to-r from-sky-400">
         <div class="text-start m-4"> 
+          <span class="font-bold block">{{ shoe.brand }}</span>
           <span class="font-bold">{{ shoe.name }}</span>
           <span class="block text-gray-500 text-sm">{{ shoe.gender }}</span>
           <span class="block text-gray-500 text-sm">{{ shoe.category }}</span>
@@ -166,6 +171,7 @@ export default {
       description: doc.data().description,
       gender: doc.data().gender,
       imageUrl: doc.data().image,
+      brand: doc.data().brand,
       name: doc.data().name,
       price: doc.data().price,
       size: doc.data().size
