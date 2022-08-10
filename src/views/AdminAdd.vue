@@ -59,7 +59,7 @@
 <script>
 
 import { shoesCollectionRef } from '../firebase'
-import { addDoc, setDoc } from '@firebase/firestore'
+import { addDoc, serverTimestamp, setDoc } from '@firebase/firestore'
 import { ref } from '@vue/reactivity'
 import { useRouter } from 'vue-router'
 import { getDownloadURL, getStorage, ref as imageRef, uploadBytes, uploadBytesResumable } from '@firebase/storage'
@@ -91,7 +91,8 @@ export default {
           price: price.value, 
           size: size.value, 
           category: category.value, 
-          gender: gender.value
+          gender: gender.value,
+          createdAt: serverTimestamp()
          })
          router.push('/admin')
          console.log(addDocument)

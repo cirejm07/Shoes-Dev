@@ -178,6 +178,50 @@
                 </router-link>
               </div>
             </div>
+            <!-- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div v-for="(shoe,index) in latestShoes" :key="index" class="carousel-item" :class="index === 0 ? 'active' : ''">
+      <img :src="shoe.imageUrl" class="d-block w-100" :alt="shoe.name">
+      {{ shoe.name }}
+      <p>₱ {{ shoe.price }}</p>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div> -->
+
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
+  </div>
+  <div class="carousel-inner">
+    <div v-for="(shoe,index) in latestShoes" :key="index" class="carousel-item" :class="index === 0 ? 'active' : ''" data-bs-interval="10000">
+      <img :src="shoe.imageUrl" class="d-block w-100" :alt="shoe.name">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>{{ shoe.name }}</h5>
+        <p>{{ shoe.price }}</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
             <!-- Offers here-->
             <Offers />
             <!-- Testimonials here-->
@@ -209,6 +253,8 @@ export default {
     const womenShoe = ref([]);
     const uniSexShoe = ref([]);
     const trendingShoe = ref([]);
+    const latestShoes = ref([])
+
 
     onBeforeMount(() => {
       let user = auth.currentUser;
@@ -260,6 +306,9 @@ export default {
             Math.floor(Math.random() * Math.floor(Math.random() * index))
           )
           .slice(0, 1);
+        latestShoes.value = getShoes.sort((a,b) => {
+           a.createdAt - b.createdAt
+        }).slice(0,5)
       });
     });
 
@@ -280,6 +329,7 @@ export default {
       uniSexShoe,
       deleteHandler,
       trendingShoe,
+      latestShoes
     };
   },
 };
