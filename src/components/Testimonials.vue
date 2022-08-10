@@ -5,10 +5,7 @@
                   Testimonials
                 </h3>
                 <p class="mb-6 pb-2 md:mb-12 md:pb-0">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Fugit, error amet numquam iure provident voluptate esse quasi,
-                  veritatis totam voluptas nostrum quisquam eum porro a pariatur
-                  veniam.
+                  Testimonials take the spotlight away from the seller, and shine it on the customer. Your customer was once in the shopper’s shoes, debating what product to choose, comparing prices, reading marketing message after marketing message. Once the potential new buyer hears from someone they can actually relate to—someone who isn’t being paid to say these wonderful things—then their trust deepens, and their chances of purchasing rises.
                 </p>
               </div>
 
@@ -16,13 +13,13 @@
                 <div class="mb-12 md:mb-0">
                   <div class="flex justify-center mb-6 hover:scale-110 ease-in-out duration-300">
                     <img
-                      src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg"
+                      src="https://mdbootstrap.com/img/Photos/Avatars/img%20(9).jpg"
                       class="rounded-full shadow-lg w-32"
                     />
                   </div>
-                  <h5 class="text-xl font-semibold mb-4">Maria Smantha</h5>
+                  <h5 class="text-xl font-semibold mb-4">Louise Barkley</h5>
                   <h6 class="font-semibold text-blue-600 mb-4">
-                    Web Developer
+                    Basketball Player
                   </h6>
                   <p class="mb-4">
                     <svg
@@ -40,9 +37,7 @@
                         d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"
                       ></path>
                     </svg>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Quod eos id officiis hic tenetur quae quaerat ad velit ab
-                    hic tenetur.
+                    Good product for the price. If you have a wider foot, this is has some room. I am a 6’4” 245lbs and I am constantly up and down for rebounds, blocks, and dunks. With that being said, these shoes were able to absorb a good amount of impact and force. Solid basketball shoe.!
                   </p>
                   <ul class="flex justify-center mb-0">
                     <li>
@@ -141,7 +136,7 @@
                   </div>
                   <h5 class="text-xl font-semibold mb-4">Lisa Cudrow</h5>
                   <h6 class="font-semibold text-blue-600 mb-4">
-                    Graphic Designer
+                    Fitness Trainer
                   </h6>
                   <p class="mb-4">
                     <svg
@@ -158,8 +153,7 @@
                         fill="currentColor"
                         d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"
                       ></path></svg
-                    >Ut enim ad minima veniam, quis nostrum exercitationem ullam
-                    corporis suscipit laboriosam, nisi ut aliquid commodi.
+                    >I use this shoe in the gym for a 40-50 min cardio session on an elliptical machine followed by a variety of weight lifting routines. On the elliptical it is very stable, providing the best support I've experienced. Also very solid in the weight room, better than I expected. Nice job!
                   </p>
                   <ul class="flex justify-center mb-0">
                     <li>
@@ -252,13 +246,13 @@
                 <div class="mb-0">
                   <div class="flex justify-center mb-6 hover:scale-110 ease-in-out duration-300">
                     <img
-                      src="https://mdbootstrap.com/img/Photos/Avatars/img%20(9).jpg"
+                      src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg"
                       class="rounded-full shadow-lg w-32"
-                    />
+                    /> 
                   </div>
-                  <h5 class="text-xl font-semibold mb-4">John Smith</h5>
+                  <h5 class="text-xl font-semibold mb-4">Melinda Smith</h5>
                   <h6 class="font-semibold text-blue-600 mb-4">
-                    Marketing Specialist
+                    Runner
                   </h6>
                   <p class="mb-4">
                     <svg
@@ -275,9 +269,7 @@
                         fill="currentColor"
                         d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"
                       ></path></svg
-                    >At vero eos et accusamus et iusto odio dignissimos ducimus
-                    qui blanditiis praesentium voluptatum deleniti atque
-                    corrupti.
+                    >Had these shoes for about 3 months. I have been running with them a decent amount(2-3 miles runs) 2-4xs a week, and working out cross fit style excersizes. Comfortable! they hold up better than other brand and just as light. Plus you can go to the store.
                   </p>
                   <ul class="flex justify-center mb-0">
                     <li>

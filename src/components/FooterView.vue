@@ -85,8 +85,7 @@
           Shoes.Dev
         </h6>
         <p>
-          Here you can use rows and columns to organize your footer content. Lorem ipsum dolor
-          sit amet, consectetur adipisicing elit.
+          Shoes.Dev footwear is to efficiently and effectively satisfy our customer’s needs. This means that we consider our clients as partners, we work to perfect our processes and corporate organisation to create a professional team that has a reputation for being the very best.
         </p>
       </div>
       <div class="">
