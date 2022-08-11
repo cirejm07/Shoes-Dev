@@ -14,13 +14,13 @@
                     class="h-full w-full rounded-t pb-6"
                   />
                   <p class="w-full text-gray-600 text-xs md:text-sm px-6">
-                    GETTING STARTED
+                    <!-- GETTING STARTED -->
                   </p>
                   <div class="w-full font-bold text-xl text-gray-900 px-6 uppercase">
                     $100 Voucher
                   </div>
-                  <p class="text-gray-800 font-serif text-base px-6 mb-5">
-                    Lorem ipsum eu nunc commodo posuere et sit amet ligula.
+                  <p class="text-gray-800 font-serif text-base px-6 mb-5 mt-3">
+                    This Gift Voucher is valid until December 20, 2022 only. Grab yours now and start shopping your favorite shoes.
                   </p>
                 </a>
               </div>
@@ -55,13 +55,13 @@
                     class="h-full w-full rounded-t pb-6"
                   />
                   <p class="w-full text-gray-600 text-xs md:text-sm px-6">
-                    GETTING STARTED
+                    <!-- GETTING STARTED -->
                   </p>
                   <div class="w-full font-bold text-xl text-gray-900 px-6 uppercase">
                     Limited Free Shipping
                   </div>
-                  <p class="text-gray-800 font-serif text-base px-6 mb-5">
-                    Lorem ipsum eu nunc commodo posuere et sit amet ligula.
+                  <p class="text-gray-800 font-serif text-base px-6 mb-5 mt-3">
+                    Free Shipping on all orders above Php 1,000. Create an account and enjoy these benifits now.
                   </p>
                 </a>
               </div>

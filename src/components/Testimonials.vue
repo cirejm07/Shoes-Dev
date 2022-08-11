@@ -1,5 +1,5 @@
 <template>
-  <section class="mt-12 mb-20 text-gray-700">
+  <section class="mt-16 mb-20 text-gray-700">
               <div class="text-center md:max-w-xl lg:max-w-3xl mx-auto">
                 <h3 class="text-3xl font-bold mb-6 text-blue-800 uppercase">
                   Testimonials

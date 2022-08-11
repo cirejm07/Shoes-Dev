@@ -18,17 +18,18 @@
         <p class="text-xl md:text-3xl text-white uppercase pb-8">
           The Season Begins
         </p>
-        <p
-          class="text-white font-bold text-3xl md:text-6xl uppercase italic"
-        >
-          PROMOTION <span class="text-red-500 font-extrabold">SALE OFF 50%</span>
+        <p class="text-white font-bold text-3xl md:text-6xl uppercase italic">
+          PROMOTION
+          <span class="text-red-500 font-extrabold">SALE OFF 50%</span>
         </p>
-        
-        <router-link to="/men"><button
-          class="bg-blue-800 hover:bg-blue-500 text-white font-bold text-lg mt-2 py-3 px-4 hover:scale-95 ease-in-out duration-200"
+
+        <router-link to="/men"
+          ><button
+            class="bg-blue-800 hover:bg-blue-500 text-white font-bold text-lg mt-2 py-3 px-4 hover:scale-95 ease-in-out duration-200"
+          >
+            Buy Now!
+          </button></router-link
         >
-          Buy Now!
-        </button></router-link>
         <p class="text-xl md:text-6xl text-white uppercase mt-5">
           Before Offer Ends
         </p>
@@ -59,7 +60,7 @@
             >
               <div class="w-full lg:w-2/3 rounded-t overflow-hidden">
                 <img
-                  style="height: 400px; width: auto; margin:auto"
+                  style="height: 400px; width: auto; margin: auto"
                   :src="shoe.imageUrl"
                   class="h-full w-full"
                 />
@@ -84,29 +85,17 @@
                   >
                     {{ shoe.name }}
                   </p>
-                  <p class="w-100 text-gray-800 font-sans text-base px-6 mb-2 pb-2 h-40 md:h-72">
+                  <p
+                    class="w-100 text-gray-800 font-sans text-base px-6 mb-2 pb-2 h-40 md:h-72"
+                  >
                     {{ shoe.description }}
-                    
                   </p>
                 </div>
-
-                <!-- <div
-                  class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6"
-                >
-                  <div class="flex items-center justify-between">
-                    <img
-                      class="w-8 h-8 rounded-full mr-4 avatar"
-                      data-tippy-content="Author Name"
-                      src="http://i.pravatar.cc/300"
-                      alt="Avatar of Author"
-                    />
-                    <p class="text-gray-600 text-xs md:text-sm">1 MIN READ</p>
-                  </div>
-                </div> -->
               </div>
             </router-link>
           </div>
           <!--/Lead Card-->
+
           <!--Posts Container-->
           <div class="flex flex-wrap justify-between pt-12 -mx-6">
             <!--1/3 col -->
@@ -125,9 +114,9 @@
                     class="h-64 w-full rounded-t"
                   />
                   <p
-                    class="gender-card w-full text-gray-600 text-xs md:text-sm px-6"
+                    class="gender-card w-full text-gray-600 text-xs md:text-sm mx-3 px-6 py-12"
                   >
-                    Men's
+                    Men's Collections
                   </p>
                 </router-link>
               </div>
@@ -148,9 +137,9 @@
                     class="h-64 w-full rounded-t"
                   />
                   <p
-                    class="gender-card w-full text-gray-600 text-xs md:text-sm px-6"
+                    class="gender-card w-full text-gray-600 text-xs md:text-sm mx-3 px-6 py-12"
                   >
-                    Women's
+                    Women's Collections
                   </p>
                 </router-link>
               </div>
@@ -171,64 +160,17 @@
                     class="h-64 w-full rounded-t"
                   />
                   <p
-                    class="gender-card w-full text-gray-600 text-xs md:text-sm px-6"
+                    class="gender-card w-full text-gray-600 text-xs md:text-sm mx-3 px-6 py-12"
                   >
-                    Unisex
+                    Unisex Collections
                   </p>
                 </router-link>
               </div>
             </div>
-            <!-- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div v-for="(shoe,index) in latestShoes" :key="index" class="carousel-item" :class="index === 0 ? 'active' : ''">
-      <img :src="shoe.imageUrl" class="d-block w-100" :alt="shoe.name">
-      {{ shoe.name }}
-      <p>₱ {{ shoe.price }}</p>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div> -->
-
-<div class="carousel carousel-dark slide col-md-6 mt-4" id="carouselExampleDark" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
-  </div>
-  <div class="carousel-inner">
-    <div v-for="(shoe,index) in latestShoes" :key="index" class="carousel-item" :class="index === 0 ? 'active' : ''" data-bs-interval="10000">
-      <img :src="shoe.imageUrl" class="d-block w-100" :alt="shoe.name">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>{{ shoe.name }}</h5>
-        <p>{{ shoe.price }}</p>
-      </div>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-            <!-- Offers here-->
             <Offers />
-            <!-- Testimonials here-->
             <Testimonials />
           </div>
         </div>
-        <!-- News letter here-->
         <news-letter />
       </div>
     </div>
@@ -253,8 +195,7 @@ export default {
     const womenShoe = ref([]);
     const uniSexShoe = ref([]);
     const trendingShoe = ref([]);
-    const latestShoes = ref([])
-
+    const latestShoes = ref([]);
 
     onBeforeMount(() => {
       let user = auth.currentUser;
@@ -306,9 +247,11 @@ export default {
             Math.floor(Math.random() * Math.floor(Math.random() * index))
           )
           .slice(0, 1);
-        latestShoes.value = getShoes.sort((a,b) => {
-           a.createdAt - b.createdAt
-        }).slice(0,5)
+        latestShoes.value = getShoes
+          .sort((a, b) => {
+            a.createdAt - b.createdAt;
+          })
+          .slice(0, 5);
       });
     });
 
@@ -329,7 +272,7 @@ export default {
       uniSexShoe,
       deleteHandler,
       trendingShoe,
-      latestShoes
+      latestShoes,
     };
   },
 };

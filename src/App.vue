@@ -27,12 +27,11 @@ import AdminNav from "./components/AdminNav.vue";
 import CustomerNavVue from "./components/CustomerNav.vue";
 import WelcomeNav from "./components/WelcomeNav.vue";
 import FooterView from "./components/FooterView.vue";
-import ReusableNav from "./components/ReusableNav.vue";
 import { doc, getDoc } from "@firebase/firestore";
 
 export default {
   name: "App",
-  components: { AdminNav, CustomerNavVue, WelcomeNav, FooterView, ReusableNav },
+  components: { AdminNav, CustomerNavVue, WelcomeNav, FooterView },
   setup() {
     const isShowModalLogin = ref(false);
     const userName = ref("");
