@@ -14,7 +14,7 @@
         </div>
         <div class="mb-3 col">
           <label for="description" class="form-label">Description</label>
-          <textarea class="border"  v-model="description" name="" id="description" cols="53" rows="8" placeholder="Describe the product"></textarea>
+          <textarea class="border form-control"  v-model="description" id="description" cols="53" rows="8" placeholder="Describe the product"></textarea>
         </div>
         <div class="row justify-content-center">
         <div class="mb-3 col-6">
@@ -42,7 +42,7 @@
             <option value="Training & Gym">Training & Gym</option>
           </select>
         </div>
-          <button type="submit" class="btn btn-primary">Update</button>
+          <button type="submit" class="btn btn-primary mt-6">Update</button>
       </form>
     </div>
     <div class="col-4 mt-4">  

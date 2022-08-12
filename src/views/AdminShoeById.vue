@@ -66,22 +66,22 @@
 
         <!-- <p>{{ description }}</p> -->
       </div>
-    </div>
+    </div> 
     <div class="mt-4 col-lg-2 border-2">
       <div class="border-b-2">
         <img class="img-side" src="../assets/freetruck2.png" />
         <p class="pt-2 uppercase text-md font-bold">Free Delivery</p>
-        <p class="mt-0 pt-0 text-xs">For all subscribers</p>
+        <p class="mt-0 pt-0 text-xs px-2">For all subscribers with orders above Php1000</p>
       </div>
       <div class="border-b-2">
         <img class="img-side pt-2" src="../assets/refund.png" />
         <p class="pt-2 uppercase text-md font-bold">Return and Refund</p>
-        <p class="mt-0 pt-0 text-xs">Only Accept reasonable return</p>
+        <p class="mt-0 pt-0 text-xs px-2">Only accept reasonable return</p>
       </div>
       <div class="">
         <img class="img-side" src="../assets/payment2.jpg" />
         <p class="pt-2 uppercase text-md font-bold">Various Payment Options Available</p>
-        <p class="mt-0 pt-0 text-xs">Select mode of payment</p>
+        <p class="mt-0 pt-0 text-xs px-2">Select your desired mode of payment for convenience. We also accept gcash.</p>
       </div>
     </div>
   </div>
