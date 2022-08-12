@@ -17,7 +17,7 @@
                     <!-- GETTING STARTED -->
                   </p>
                   <div class="w-full font-bold text-xl text-gray-900 px-6 uppercase">
-                    $100 Voucher
+                    Php500 Voucher
                   </div>
                   <p class="text-gray-800 font-serif text-base px-6 mb-5 mt-3">
                     This Gift Voucher is valid until December 20, 2022 only. Grab yours now and start shopping your favorite shoes.

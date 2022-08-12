@@ -1,203 +1,212 @@
 <template>
-  <div class="text-gray-700 grid md:grid-cols-5">
-    <MenNav
-      :basketHandler="basketHandler"
-      :walkingHandler="walkingHandler"
-      :runningHandler="runningHandler"
-      :trainingAndGymHandler="trainingAndGymHandler"
-      :showAllHandler="showAllHandler"
-      :route="route"
-    />
-    <main class="px-16 py-6 bg-gray-100 md:col-span-4">
-      <!-- <Header /> -->
-      <h1 class="font-bold">Unisex Collections</h1>
-      <div>
-        <div class="" v-if="showAllShoe">
-          <h4 class="mt-12 font-bold pb-2 border-b border-gray-200">
-            All Shoes
-          </h4>
+  <div>
+    <div class="text-gray-700 grid md:grid-cols-5">
+      <MenNav
+        :basketHandler="basketHandler"
+        :walkingHandler="walkingHandler"
+        :runningHandler="runningHandler"
+        :trainingAndGymHandler="trainingAndGymHandler"
+        :showAllHandler="showAllHandler"
+        :route="route"
+      />
+      <main class="px-16 py-6 bg-gray-100 md:col-span-4">
+        <!-- <Header /> -->
+        <h1 class="font-bold">Unisex Collections</h1>
+        <div
+          v-if="isLoading"
+          class="loading-container content-center text-center justify-center"
+        >
+          <h1 class="m-auto p-auto">LOADING...</h1>
+          <img class="loading" src="../assets/loading.gif" alt="" />
+        </div>
+        <div v-if="!isLoading">
+          <div class="" v-if="showAllShoe">
+            <h4 class="mt-12 font-bold pb-2 border-b border-gray-200">
+              All Shoes
+            </h4>
 
-          <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <!-- All Cards -->
-            <div
-              class="card hover:scale-110 ease-in-out duration-300"
-              v-for="shoe in shoes"
-              :key="shoe.id"
-            >
-              <router-link :to="{ path: `/shoe/${shoe.id}` }">
-                <img
-                  :src="shoe.imageUrl"
-                  alt="Shoe Image"
-                  class="w-full h-32 lg:h-48 object-cover bg-gradient-to-r from-stone-500"
-                />
-                <div class="text-start m-4">
-                  <span class="font-bold">{{ shoe.name }}</span>
-                  <span class="block text-gray-500 text-sm">{{
-                    shoe.gender
-                  }}</span>
-                  <span class="block text-gray-500 text-sm">{{
-                    shoe.category
-                  }}</span>
-                  <span class="block text-gray-500 text-sm"
-                    >₱ {{ shoe.price }}</span
-                  >
-                </div>
-                <hr />
-                <p class="font-bold text-gray-600">Read More..</p>
-              </router-link>
+            <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+              <!-- All Cards -->
+              <div
+                class="card hover:scale-110 ease-in-out duration-300"
+                v-for="shoe in shoes"
+                :key="shoe.id"
+              >
+                <router-link :to="{ path: `/shoe/${shoe.id}` }">
+                  <img
+                    :src="shoe.imageUrl"
+                    alt="Shoe Image"
+                    class="w-full h-32 lg:h-48 object-cover bg-gradient-to-r from-stone-500"
+                  />
+                  <div class="text-start m-4">
+                    <span class="font-bold">{{ shoe.name }}</span>
+                    <span class="block text-gray-500 text-sm">{{
+                      shoe.gender
+                    }}</span>
+                    <span class="block text-gray-500 text-sm">{{
+                      shoe.category
+                    }}</span>
+                    <span class="block text-gray-500 text-sm"
+                      >₱ {{ shoe.price }}</span
+                    >
+                  </div>
+                  <hr />
+                  <p class="font-bold text-gray-600">Read More..</p>
+                </router-link>
+              </div>
+            </div>
+          </div>
+
+          <div v-if="isBasketball">
+            <h4 class="mt-12 font-bold pb-2 border-b border-gray-200">
+              Basketball Shoes
+            </h4>
+
+            <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+              <!-- BasketballCards -->
+              <div
+                class="card hover:scale-110 ease-in-out duration-300"
+                v-for="shoe in basket"
+                :key="shoe.id"
+              >
+                <router-link :to="{ path: `/shoe/${shoe.id}` }">
+                  <img
+                    :src="shoe.imageUrl"
+                    alt="Shoe Image"
+                    class="w-full h-32 sm:h-48 object-cover bg-gradient-to-r from-stone-500"
+                  />
+                  <div class="text-start m-4">
+                    <span class="font-bold">{{ shoe.name }}</span>
+                    <span class="block text-gray-500 text-sm">{{
+                      shoe.gender
+                    }}</span>
+                    <span class="block text-gray-500 text-sm">{{
+                      shoe.category
+                    }}</span>
+                    <span class="block text-gray-500 text-sm"
+                      >₱ {{ shoe.price }}</span
+                    >
+                  </div>
+                  <hr />
+                  <p class="font-bold text-gray-600">Read More..</p>
+                </router-link>
+              </div>
+            </div>
+          </div>
+
+          <div v-if="isWalking">
+            <h4 class="mt-12 font-bold pb-2 border-b border-gray-200">
+              Walking Shoes
+            </h4>
+
+            <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+              <!-- WalkingCards -->
+              <div
+                class="card hover:scale-110 ease-in-out duration-300"
+                v-for="shoe in walking"
+                :key="shoe.id"
+              >
+                <router-link :to="{ path: `/shoe/${shoe.id}` }">
+                  <img
+                    :src="shoe.imageUrl"
+                    alt="Shoe Image"
+                    class="w-full h-32 sm:h-48 object-cover bg-gradient-to-r from-stone-500"
+                  />
+                  <div class="text-start m-4">
+                    <span class="font-bold">{{ shoe.name }}</span>
+                    <span class="block text-gray-500 text-sm">{{
+                      shoe.gender
+                    }}</span>
+                    <span class="block text-gray-500 text-sm">{{
+                      shoe.category
+                    }}</span>
+                    <span class="block text-gray-500 text-sm"
+                      >₱ {{ shoe.price }}</span
+                    >
+                  </div>
+                  <hr />
+                  <p class="font-bold text-gray-600">Read More..</p>
+                </router-link>
+              </div>
+            </div>
+          </div>
+
+          <div v-if="isRunning">
+            <h4 class="mt-12 font-bold pb-2 border-b border-gray-200">
+              Running Shoes
+            </h4>
+
+            <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+              <!-- RunningCards -->
+              <div
+                class="card hover:scale-110 ease-in-out duration-300"
+                v-for="shoe in running"
+                :key="shoe.id"
+              >
+                <router-link :to="{ path: `/shoe/${shoe.id}` }">
+                  <img
+                    :src="shoe.imageUrl"
+                    alt="Shoe Image"
+                    class="w-full h-32 sm:h-48 object-cover bg-gradient-to-r from-stone-500"
+                  />
+                  <div class="text-start m-4">
+                    <span class="font-bold">{{ shoe.name }}</span>
+                    <span class="block text-gray-500 text-sm">{{
+                      shoe.gender
+                    }}</span>
+                    <span class="block text-gray-500 text-sm">{{
+                      shoe.category
+                    }}</span>
+                    <span class="block text-gray-500 text-sm"
+                      >₱ {{ shoe.price }}</span
+                    >
+                  </div>
+                  <hr />
+                  <p class="font-bold text-gray-600">Read More..</p>
+                </router-link>
+              </div>
+            </div>
+          </div>
+
+          <div v-if="isTrainingAndGym">
+            <h4 class="mt-12 font-bold pb-2 border-b border-gray-200">
+              Training/Gym Shoes
+            </h4>
+
+            <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+              <!-- Training/Gym Cards -->
+              <div
+                class="card hover:scale-110 ease-in-out duration-300"
+                v-for="shoe in training"
+                :key="shoe.id"
+              >
+                <router-link :to="{ path: `/shoe/${shoe.id}` }">
+                  <img
+                    :src="shoe.imageUrl"
+                    alt="Shoe Image"
+                    class="w-full h-32 sm:h-48 object-cover bg-gradient-to-r from-stone-500"
+                  />
+                  <div class="text-start m-4">
+                    <span class="font-bold">{{ shoe.name }}</span>
+                    <span class="block text-gray-500 text-sm">{{
+                      shoe.gender
+                    }}</span>
+                    <span class="block text-gray-500 text-sm">{{
+                      shoe.category
+                    }}</span>
+                    <span class="block text-gray-500 text-sm"
+                      >₱ {{ shoe.price }}</span
+                    >
+                  </div>
+                  <hr />
+                  <p class="font-bold text-gray-600">Read More..</p>
+                </router-link>
+              </div>
             </div>
           </div>
         </div>
-
-        <div v-if="isBasketball">
-          <h4 class="mt-12 font-bold pb-2 border-b border-gray-200">
-            Basketball Shoes
-          </h4>
-
-          <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <!-- BasketballCards -->
-            <div
-              class="card hover:scale-110 ease-in-out duration-300"
-              v-for="shoe in basket"
-              :key="shoe.id"
-            >
-              <router-link :to="{ path: `/shoe/${shoe.id}` }">
-                <img
-                  :src="shoe.imageUrl"
-                  alt="Shoe Image"
-                  class="w-full h-32 sm:h-48 object-cover bg-gradient-to-r from-stone-500"
-                />
-                <div class="text-start m-4">
-                  <span class="font-bold">{{ shoe.name }}</span>
-                  <span class="block text-gray-500 text-sm">{{
-                    shoe.gender
-                  }}</span>
-                  <span class="block text-gray-500 text-sm">{{
-                    shoe.category
-                  }}</span>
-                  <span class="block text-gray-500 text-sm"
-                    >₱ {{ shoe.price }}</span
-                  >
-                </div>
-                <hr />
-                <p class="font-bold text-gray-600">Read More..</p>
-              </router-link>
-            </div>
-          </div>
-        </div>
-
-        <div v-if="isWalking">
-          <h4 class="mt-12 font-bold pb-2 border-b border-gray-200">
-            Walking Shoes
-          </h4>
-
-          <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <!-- WalkingCards -->
-            <div
-              class="card hover:scale-110 ease-in-out duration-300"
-              v-for="shoe in walking"
-              :key="shoe.id"
-            >
-              <router-link :to="{ path: `/shoe/${shoe.id}` }">
-                <img
-                  :src="shoe.imageUrl"
-                  alt="Shoe Image"
-                  class="w-full h-32 sm:h-48 object-cover bg-gradient-to-r from-stone-500"
-                />
-                <div class="text-start m-4">
-                  <span class="font-bold">{{ shoe.name }}</span>
-                  <span class="block text-gray-500 text-sm">{{
-                    shoe.gender
-                  }}</span>
-                  <span class="block text-gray-500 text-sm">{{
-                    shoe.category
-                  }}</span>
-                  <span class="block text-gray-500 text-sm"
-                    >₱ {{ shoe.price }}</span
-                  >
-                </div>
-                <hr />
-                <p class="font-bold text-gray-600">Read More..</p>
-              </router-link>
-            </div>
-          </div>
-        </div>
-
-        <div v-if="isRunning">
-          <h4 class="mt-12 font-bold pb-2 border-b border-gray-200">
-            Running Shoes
-          </h4>
-
-          <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <!-- RunningCards -->
-            <div
-              class="card hover:scale-110 ease-in-out duration-300"
-              v-for="shoe in running"
-              :key="shoe.id"
-            >
-              <router-link :to="{ path: `/shoe/${shoe.id}` }">
-                <img
-                  :src="shoe.imageUrl"
-                  alt="Shoe Image"
-                  class="w-full h-32 sm:h-48 object-cover bg-gradient-to-r from-stone-500"
-                />
-                <div class="text-start m-4">
-                  <span class="font-bold">{{ shoe.name }}</span>
-                  <span class="block text-gray-500 text-sm">{{
-                    shoe.gender
-                  }}</span>
-                  <span class="block text-gray-500 text-sm">{{
-                    shoe.category
-                  }}</span>
-                  <span class="block text-gray-500 text-sm"
-                    >₱ {{ shoe.price }}</span
-                  >
-                </div>
-                <hr />
-                <p class="font-bold text-gray-600">Read More..</p>
-              </router-link>
-            </div>
-          </div>
-        </div>
-
-        <div v-if="isTrainingAndGym">
-          <h4 class="mt-12 font-bold pb-2 border-b border-gray-200">
-            Training/Gym Shoes
-          </h4>
-
-          <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <!-- Training/Gym Cards -->
-            <div
-              class="card hover:scale-110 ease-in-out duration-300"
-              v-for="shoe in training"
-              :key="shoe.id"
-            >
-              <router-link :to="{ path: `/shoe/${shoe.id}` }">
-                <img
-                  :src="shoe.imageUrl"
-                  alt="Shoe Image"
-                  class="w-full h-32 sm:h-48 object-cover bg-gradient-to-r from-stone-500"
-                />
-                <div class="text-start m-4">
-                  <span class="font-bold">{{ shoe.name }}</span>
-                  <span class="block text-gray-500 text-sm">{{
-                    shoe.gender
-                  }}</span>
-                  <span class="block text-gray-500 text-sm">{{
-                    shoe.category
-                  }}</span>
-                  <span class="block text-gray-500 text-sm"
-                    >₱ {{ shoe.price }}</span
-                  >
-                </div>
-                <hr />
-                <p class="font-bold text-gray-600">Read More..</p>
-              </router-link>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
+      </main>
+    </div>
   </div>
 </template>
 
@@ -213,6 +222,7 @@ export default {
   name: "UnisexView",
   components: { MenNav },
   setup() {
+    const isLoading = ref(true);
     const isBasketball = ref(false);
     const isWalking = ref(false);
     const isRunning = ref(false);
@@ -266,6 +276,7 @@ export default {
           (getShoe) =>
             getShoe.gender === "Unisex" && getShoe.category === "Training & Gym"
         );
+        isLoading.value = false;
       });
     });
 
@@ -324,6 +335,7 @@ export default {
       runningHandler,
       trainingAndGymHandler,
       showAllHandler,
+      isLoading,
     };
   },
 };
