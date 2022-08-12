@@ -4,56 +4,49 @@
     <div class="me-auto"></div>
     <div class="text-center ms-auto">
     
-      <div class="flex mx-auto max-w-screen-xl md:px-6">
+      <div class="flex mx-auto max-w-screen-xl pl-6 md:px-6">
         <div class="flex">
-          <ul class="flex space-x-4 flex-row m-auto text-xs font-medium md:space-x-6 md:text-sm">
+          <ul class="flex space-x-4 flex-row mr-auto text-xs font-medium md:space-x-8 md:text-sm">
             <li>
               <router-link
                 to="/"
-                class="text-blue-700 uppercase"
+                class="text-blue-700 md:uppercase"
                 >Home</router-link
               >
             </li>
             <li>
               <router-link
                 to="/men"
-                class="text-blue-700 uppercase"
+                class="text-blue-700 md:uppercase"
                 >Men's</router-link
               >
             </li>
             <li>
               <router-link
                 to="/women"
-                class="text-blue-700 uppercase"
+                class="text-blue-700 md:uppercase"
                 >Women's</router-link
               >
             </li>
             <li>
               <router-link
                 to="/unisex"
-                class="text-blue-700 uppercase"
+                class="text-blue-700 md:uppercase"
                 >Unisex</router-link
               >
             </li>
             <li>
               <router-link
                 to="/about"
-                class="text-blue-700 uppercase"
+                class="text-blue-700 md:uppercase"
                 >About</router-link
               >
             </li>
             <li>
               <router-link
                 to="/contact"
-                class="text-blue-700 uppercase"
+                class="text-blue-700 md:uppercase"
                 >Contact</router-link
-              >
-            </li>
-            <li>
-              <router-link
-                to="/blog"
-                class="text-blue-700 uppercase"
-                >Blog</router-link
               >
             </li>
           </ul>
