@@ -73,10 +73,10 @@
       </div>
       
     </div>
-    <!-- <div class="cart">
-      <fa icon="cart-shopping" class="mt-2 mx-3" />
+    <div class="cart">
+      <fa icon="cart-shopping" class="mt-2 mx-3 hidden md:block" />
       <span></span>
-    </div> -->
+    </div>
   </div>
 </template>
 
